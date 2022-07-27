@@ -13,6 +13,7 @@ import { PricingComponent } from './pricing/pricing.component';
 import { ContactComponent } from './contact/contact.component';
 import { OnlineOrderComponent } from './online-order/online-order.component';
 import { GetQuoteComponent } from './get-quote/get-quote.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,8 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "onlineOrder", component: OnlineOrderComponent },
   { path: "quote", component: GetQuoteComponent },
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "**", component: ErrorPageComponent }
 ]
 
 @NgModule({
