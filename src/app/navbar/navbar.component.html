@@ -1,0 +1,40 @@
+<!-- ======= Header ======= -->
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="index.html" class="logo d-flex align-items-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <img src="../../assets/img/MC Garage-logo.png" alt="logo">
+    </a>
+
+    <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a routerLink="./home">Home</a></li>
+        <li><a routerLink="./about">About</a></li>
+        <li class="dropdown"><a routerLink="./services"><span>Services</span> <i
+              class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <ul>
+            <li><a href="#">Car Service</a></li>
+            <li><a href="#">Car Wrapping</a></li>
+            <li><a href="#">Custom Addition</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a routerLink="./onlineOrder"><span>Online Order</span> <i
+              class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <ul>
+            <li><a href="#">Wraps</a></li>
+            <li><a href="#">Auto-Parts</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="./pricing">Pricing</a></li>
+        <li><a routerLink="./contact">Contact</a></li>
+        <li><a class="get-a-quote" routerLink="./quote">Get a Quote</a></li>
+      </ul>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+<!-- End Header -->
+<router-outlet></router-outlet>
