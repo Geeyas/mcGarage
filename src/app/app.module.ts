@@ -18,6 +18,7 @@ import { CustomisationComponent } from './customisation/customisation.component'
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: "customisation", component: CustomisationComponent },
   { path: "signup", component: SignupComponent },
   { path: "login", component: LoginComponent },
+  { path: "admin", component: AdminComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: ErrorPageComponent }
 ]
@@ -50,6 +52,7 @@ const routes: Routes = [
     CustomisationComponent,
     LoginComponent,
     SignupComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,

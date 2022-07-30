@@ -10,11 +10,13 @@ export class ContactComponent {
 
   nameMsg: string = "";
   emailMsg: string = "";
+  numberMsg: string = "";
   subjectMsg: string = "";
   descpMsg: string = "";
 
   name: string = "";
   email: string = "";
+  number: string = "";
   subject: string = "";
   message: string = "";
 
@@ -27,6 +29,10 @@ export class ContactComponent {
     } else if (!this.email) {
       this.emailMsg = "Email must be entered";
       return;
+    } else if (!this.number) {
+      this.numberMsg = "Number must be entered";
+    } else if (isNaN(parseInt(this.number))) {
+      this.numberMsg = "Invalid Number";
     } else if (!this.subject) {
       this.subjectMsg = "Subject must be entered";
       return;
@@ -51,14 +57,16 @@ export class ContactComponent {
       this.email = "";
       this.subject = "";
       this.message = "";
+      this.numberMsg = "";
     }
   }
 
   doClear() {
-    // this.nameMsg = "";
-    // this.emailMsg = "";
-    // this.subjectMsg = "";
-    // this.descpMsg = "";
+    this.nameMsg = "";
+    this.emailMsg = "";
+    this.subjectMsg = "";
+    this.descpMsg = "";
+    this.numberMsg = "";
   }
 
 }
