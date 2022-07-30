@@ -1,0 +1,19 @@
+table {
+    width: 85%;
+    margin-left: 5%;
+
+}
+
+td,
+th {
+    border: 2px solid grey;
+    text-align: left;
+    padding: 8px;
+}
+
+table thead th{
+    color: #05337e;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-align: center;
+}
