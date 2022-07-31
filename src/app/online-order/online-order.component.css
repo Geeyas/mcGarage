@@ -3,11 +3,12 @@
     max-width: 300px;
     margin: 20px;
     text-align: center;
-    font-family: arial;
     display: inline-block;
     padding: 20px;
   }
   
+  
+
   .price {
     color: grey;
     font-size: 22px;
