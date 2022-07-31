@@ -1,0 +1,18 @@
+#login .container form h2 {
+    color: #05337e;
+    text-align: center;
+}
+
+#login .container form input, span {
+    width: auto;
+    margin-left: 40%;
+}
+
+#login .container form button {
+    background-color: #05337e;
+    color: white;
+    border-color: #05337e;
+    width: 160px;
+    border-radius: 5%;
+    box-shadow: 0 0 10px black;
+}

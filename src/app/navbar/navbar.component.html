@@ -2,9 +2,8 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    <a href="index.html" class="logo d-flex align-items-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <img src="../../assets/img/MC Garage-logo.png" alt="logo">
+    <a routerLink="./home" class="logo d-flex align-items-center">
+      <img src="../../assets/img/MC Garage-logo.png" alt="logo" style="margin-left: -40px;">
     </a>
 
     <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
@@ -16,21 +15,24 @@
         <li class="dropdown"><a routerLink="./services"><span>Services</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
-            <li><a href="#">Car Service</a></li>
-            <li><a href="#">Car Wrapping</a></li>
-            <li><a href="#">Custom Addition</a></li>
+            <li><a href="./services#carServices">Car Service</a></li>
+            <li><a href="./services#carWrapping">Car Wrapping</a></li>
+            <li><a href="./services#customAddition">Custom Addition</a></li>
           </ul>
         </li>
         <li class="dropdown"><a routerLink="./onlineOrder"><span>Online Order</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
-            <li><a routerLink="./pricing">Pricing</a></li>
-            <li><a href="#">Wraps</a></li>
-            <li><a href="#">Auto-Parts</a></li>
+            <li><a href="./onlineOrder#pricing">Pricing</a></li>
+            <li><a href="./OnlineOrder#wraps">Wraps</a></li>
+            <li><a href="./OnlineOrder#autoParts">Auto-Parts</a></li>
           </ul>
         </li>
+        <li><a routerLink="./customisation">Customisation</a></li>
         <li><a routerLink="./contact">Contact</a></li>
         <li><a class="get-a-quote" routerLink="./quote">Get a Quote</a></li>
+        <li><a class="bi bi-person-plus" style="font-size: 25px;" routerLink="./signup"></a></li>
+        <li><a class="bi bi-person-circle" style="font-size: 25px;" routerLink="./login"></a></li>
       </ul>
     </nav><!-- .navbar -->
 

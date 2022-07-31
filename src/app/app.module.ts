@@ -9,11 +9,17 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
-import { PricingComponent } from './pricing/pricing.component';
+import { PricingComponent } from './breadcrumbs/pricing.component';
 import { ContactComponent } from './contact/contact.component';
 import { OnlineOrderComponent } from './online-order/online-order.component';
 import { GetQuoteComponent } from './get-quote/get-quote.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { CustomisationComponent } from './customisation/customisation.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { FAQComponent } from './faq/faq.component';
 
 const routes: Routes = [
 
@@ -24,6 +30,10 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "onlineOrder", component: OnlineOrderComponent },
   { path: "quote", component: GetQuoteComponent },
+  { path: "customisation", component: CustomisationComponent },
+  { path: "signup", component: SignupComponent },
+  { path: "login", component: LoginComponent },
+  { path: "admin", component: AdminComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: ErrorPageComponent }
 ]
@@ -39,11 +49,17 @@ const routes: Routes = [
     PricingComponent,
     OnlineOrderComponent,
     GetQuoteComponent,
-    ContactComponent
+    ContactComponent,
+    CustomisationComponent,
+    LoginComponent,
+    SignupComponent,
+    AdminComponent,
+    FAQComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
