@@ -41,7 +41,7 @@
                         <div class="card-img">
                             <img src="assets/img/storage-service.jpg" alt="" class="img-fluid">
                         </div>
-                        <h3><a href="service-details.html" class="stretched-link">Servicing</a></h3>
+                        <h3><a routerLink="bookAppointment" class="stretched-link">Servicing</a></h3>
                         <p>There are multiple services types. Interim service, full service and major service</p>
                     </div>
                 </div><!-- End Card Item -->
@@ -51,9 +51,9 @@
                         <div class="card-img">
                             <img src="assets/img/logistics-service.jpg" alt="" class="img-fluid">
                         </div>
-                        <h3><a href="service-details.html" class="stretched-link">After Market Parts</a></h3>
+                        <h3><a routerLink="bookAppointment" class="stretched-link">After Market Parts</a></h3>
                         <p>Parts such as exhausts, spoiler, alloys, front grill, and much more can be sold
-                             individually or can be fitted to the vehicle at an additional cost.</p>
+                            individually or can be fitted to the vehicle at an additional cost.</p>
                     </div>
                 </div><!-- End Card Item -->
 
@@ -62,12 +62,13 @@
                         <div class="card-img">
                             <img src="assets/img/cargo-service.jpg" alt="" class="img-fluid">
                         </div>
-                        <h3><a href="service-details.html" class="stretched-link">Body kit</a></h3>
+                        <h3><a routerLink="bookAppointment" class="stretched-link">Body kit</a></h3>
                         <p>
-                             Body kits are sold according to the make and model of the car. Can help to increase the 
-                             engine performance and the appearance of the car. The kits can be ordered on customer’s demand 
-                             if in case, the particular model’s kit is unavailable.
-                            </p>
+                            Body kits are sold according to the make and model of the car. Can help to increase the
+                            engine performance and the appearance of the car. The kits can be ordered on customer’s
+                            demand
+                            if in case, the particular model’s kit is unavailable.
+                        </p>
                     </div>
                 </div><!-- End Card Item -->
 
@@ -76,8 +77,8 @@
                         <div class="card-img">
                             <img src="assets/img/trucking-service.jpg" alt="" class="img-fluid">
                         </div>
-                        <h3><a href="service-details.html" class="stretched-link">Car Body Wrap</a></h3>
-                        <p>Vinyl wrap sheets are used to cover the original paint work without any damages to original 
+                        <h3><a routerLink="bookAppointment" class="stretched-link">Car Body Wrap</a></h3>
+                        <p>Vinyl wrap sheets are used to cover the original paint work without any damages to original
                             paint giving the vehicle a superior and a wealthy look</p>
                     </div>
                 </div><!-- End Card Item -->
@@ -87,10 +88,12 @@
                         <div class="card-img">
                             <img src="assets/img/packaging-service.jpg" alt="" class="img-fluid">
                         </div>
-                        <h3><a href="service-details.html" class="stretched-link">Windows and head/tail lights tint</a>
+                        <h3><a routerLink="bookAppointment" class="stretched-link">Windows and head/tail lights tint</a>
                         </h3>
-                        <p>Window tints and head/ tails lights can help to stop the harsh glare of sun entering the vehicle. 
-                            The tinting of the lights gives the car a complete over all look to match with the window tint.</p>
+                        <p>Window tints and head/ tails lights can help to stop the harsh glare of sun entering the
+                            vehicle.
+                            The tinting of the lights gives the car a complete over all look to match with the window
+                            tint.</p>
                     </div>
                 </div><!-- End Card Item -->
 
@@ -99,9 +102,11 @@
                         <div class="card-img">
                             <img src="assets/img/warehousing-service.jpg" alt="" class="img-fluid">
                         </div>
-                        <h3><a href="service-details.html" class="stretched-link">Wheels and alloys</a></h3>
-                        <p>Alloys give the car a balanced ride and handling. The alloy wheels are lighter and put less strain on suspension, 
-                            thus increases the life of suspension. Alloys can act as the boots of the car, which gives the car a sporty look</p>
+                        <h3><a routerLink="bookAppointment" class="stretched-link">Wheels and alloys</a></h3>
+                        <p>Alloys give the car a balanced ride and handling. The alloy wheels are lighter and put less
+                            strain on suspension,
+                            thus increases the life of suspension. Alloys can act as the boots of the car, which gives
+                            the car a sporty look</p>
                     </div>
                 </div><!-- End Card Item -->
 
@@ -111,50 +116,60 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Features Section ======= -->
-    <section id="features" class="features" style="margin-top: -5%;">
+    <section id="features" class="features " style="margin-top: -5%;">
         <div class="container">
-            <div class="row gy-4 align-items-center features-item" data-aos="fade-up">
-                <div class="col-md-10">
+            <div class="row gy-4 align-items-center features-item" id="serviceCard" data-aos="fade-up">
+                <div class="col-md-10" id="card">
                     <h3>Service</h3>
-                    <p class="fst-italic">
+                    <p>
                         There are multiple servicing options that we provide to the customers.
                     </p>
                     <ul>
-                        <li><i class="bi bi-check"></i>  Interim service: This service is not the full service and is 
-                            to be done every 6 months or 5000-6000 km. It helps to address any issues that might be 
+                        <li><i class="bi bi-check"></i> Interim service: This service is not the full service and is
+                            to be done every 6 months or 5000-6000 km. It helps to address any issues that might be
                             caused by driving extra kilometers than average. The service includes vehicle safety
-                             inspection, engine oil and filter change, top up brake fluid and coolant. </li>
+                            inspection, engine oil and filter change, top up brake fluid and coolant. </li>
                         <li><i class="bi bi-check"></i> Full service: Generally done every 10000 – 12000 km
-                             as it makes sure that the car is running smoothly and efficiently while reducing the 
-                             risks of a break-down. This service includes inspection of the vehicle topping up the 
-                             fluids, changing the oil and filters, steering alignment, suspension and reviewing 
-                             spark plugs and changing them if required</li>
+                            as it makes sure that the car is running smoothly and efficiently while reducing the
+                            risks of a break-down. This service includes inspection of the vehicle topping up the
+                            fluids, changing the oil and filters, steering alignment, suspension and reviewing
+                            spark plugs and changing them if required</li>
                         <li><i class="bi bi-check"></i> Major service: done every 30000 – 35000 km. Major service
-                             includes all that full service offers but in much more detail. All major parts are inspected
-                              thoroughly including motor and timing belts. The service includes change of sparkplugs, cabin filter, 
-                              air filter and much more. </li>
+                            includes all that full service offers but in much more detail. All major parts are inspected
+                            thoroughly including motor and timing belts. The service includes change of sparkplugs,
+                            cabin filter,
+                            air filter and much more. </li>
                     </ul>
                 </div>
-            </div><!-- Features Item -->
-
-            <div class="row gy-4 align-items-center features-item" data-aos="fade-up" style="margin-top: 0.65%;">
-                <div class="col-md-10">
-                    <h3>Car Wraps</h3>
-                    <p class="fst-italic">
-                        Car wrapping is a huge vinyl sheets which can be molded into any shape to cover the car directly. 
-                        It can change the appearance of the car giving it a new look. 
-                    </p>
-                    <p>
-                        Wraps prevent the paint damage by giving an extra layer of vinyl on top of the original paint. 
-                        The original paint is protected which increases the market value of the car. Also, the vinyl wraps make the car
-                        look good all year long. 
-                    </p>
+                <div class="col-md-12 text-center" id="card-button">
+                    <button routerLink="quote">Get a quote</button>
                 </div>
             </div><!-- Features Item -->
-
-            <div class="row gy-4 align-items-center features-item" data-aos="fade-up" style="margin-top: 0.3%;">
+            <br>
+            <div class="row gy-4 align-items-center features-item" id="serviceCard" data-aos="fade-up"
+                style="margin-top: 0.65%;">
+                <div class="col-md-10" id="card">
+                    <h3>Car/Bike Wraps</h3>
+                    <p>
+                        Car/Bike wrapping is a huge vinyl sheets which can be molded into any shape to cover the car
+                        directly. It can change the appearance of the car giving it a new look.
+                    </p>
+                    <p>
+                        Wraps prevent the paint damage by giving an extra layer of vinyl on top of the original paint.
+                        The original paint is protected which increases the market value of the car. Also, the vinyl
+                        wraps make the car
+                        look good all year long.
+                    </p>
+                </div>
+                <div class="col-md-12 text-center" id="card-button">
+                    <button routerLink="quote">Get a quote</button>
+                </div>
+            </div><!-- Features Item -->
+            <br>
+            <div class="row gy-4 align-items-center features-item" id="serviceCard" data-aos="fade-up"
+                style="margin-top: 1%;">
                 <div class="col-md-10">
-                    <h3>Custom Addition</h3>
+                    <h3 style="margin-left:25%">Custom Addition</h3>
                     <p>There are different customisations which we offer</p>
                     <ul>
                         <li><i class="bi bi-check"></i> Window tinting and head/tail light tints</li>
@@ -162,125 +177,13 @@
                         <li><i class="bi bi-check"></i> Paint protection and vinyl wrapping</li>
                     </ul>
                 </div>
+                <div class="col-md-12 text-center" id="card-button">
+                    <button routerLink="quote">Get a quote</button>
+                </div>
             </div><!-- Features Item -->
         </div>
     </section><!-- End Features Section -->
 
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-
-            <div class="slides-1 swiper" data-aos="fade-up">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                            <h3>Saul Goodman</h3>
-                            <h4>Ceo &amp; Founder</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit
-                                rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                                risus at semper.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                            <h3>Sara Wilsson</h3>
-                            <h4>Designer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid
-                                cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet
-                                legam anim culpa.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                            <h3>Jena Karlis</h3>
-                            <h4>Store Owner</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam
-                                duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                            <h3>Matt Brandon</h3>
-                            <h4>Freelancer</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat
-                                minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore
-                                labore illum veniam.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                            <h3>John Larson</h3>
-                            <h4>Entrepreneur</h4>
-                            <div class="stars">
-                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                    class="bi bi-star-fill"></i>
-                            </div>
-                            <p>
-                                <i class="bi bi-quote quote-icon-left"></i>
-                                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster
-                                veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam
-                                culpa fore nisi cillum quid.
-                                <i class="bi bi-quote quote-icon-right"></i>
-                            </p>
-                        </div>
-                    </div><!-- End testimonial item -->
-
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <app-faq></app-faq>
 
 </main><!-- End #main -->
 <app-footer></app-footer>

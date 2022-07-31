@@ -20,6 +20,8 @@ import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { FAQComponent } from './faq/faq.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 
 const routes: Routes = [
 
@@ -31,7 +33,10 @@ const routes: Routes = [
   { path: "onlineOrder", component: OnlineOrderComponent },
   { path: "quote", component: GetQuoteComponent },
   { path: "customisation", component: CustomisationComponent },
-  { path: "signup", component: SignupComponent },
+  { path: "login/signup", component: SignupComponent },
+  { path: "login/forgotPassword", component: ForgotPasswordComponent },
+  { path: "services/bookAppointment", component: BookAppointmentComponent },
+  { path: "services/quote", component: GetQuoteComponent },
   { path: "login", component: LoginComponent },
   { path: "admin", component: AdminComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -55,6 +60,8 @@ const routes: Routes = [
     SignupComponent,
     AdminComponent,
     FAQComponent,
+    ForgotPasswordComponent,
+    BookAppointmentComponent,
   ],
   imports: [
     BrowserModule,

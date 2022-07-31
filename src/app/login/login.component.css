@@ -10,9 +10,14 @@
 
 #login .container form button {
     background-color: #05337e;
-    color:white;
-    border-color:#05337e;
-    width: 160px;
+    color: white;
+    border-color: #05337e;
+    width: auto;
     border-radius: 5%;
     box-shadow: 0 0 10px black;
+    margin-left: -3%;
+}
+
+#login .container form a {
+    margin-left: -2.6%;
 }
