@@ -31,5 +31,8 @@
     opacity: 0.7;
   }
 
+  #cards-collection .card img{
+    height: 200px;
+  }
   
  

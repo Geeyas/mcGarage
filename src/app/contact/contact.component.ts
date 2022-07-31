@@ -26,13 +26,13 @@ export class ContactComponent {
     if (!this.name) {
       this.nameMsg = "Name must be entered";
       return;
-    } else if (!this.email) {
-      this.emailMsg = "Email must be entered";
-      return;
     } else if (!this.number) {
       this.numberMsg = "Number must be entered";
     } else if (isNaN(parseInt(this.number))) {
       this.numberMsg = "Invalid Number";
+    } else if (!this.email) {
+      this.emailMsg = "Email must be entered";
+      return;
     } else if (!this.subject) {
       this.subjectMsg = "Subject must be entered";
       return;
@@ -53,11 +53,12 @@ export class ContactComponent {
       this.emailMsg = "";
       this.subjectMsg = "";
       this.descpMsg = "";
+      this.numberMsg = "";
       this.name = "";
       this.email = "";
       this.subject = "";
       this.message = "";
-      this.numberMsg = "";
+      this.number = "";
     }
   }
 

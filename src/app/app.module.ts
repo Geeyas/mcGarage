@@ -22,6 +22,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FAQComponent } from './faq/faq.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
+import { AddCartComponent } from './add-cart/add-cart.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: "pricing", component: PricingComponent },
   { path: "contact", component: ContactComponent },
   { path: "onlineOrder", component: OnlineOrderComponent },
+  { path: "onlineOrder/cart", component: AddCartComponent },
   { path: "quote", component: GetQuoteComponent },
   { path: "customisation", component: CustomisationComponent },
   { path: "login/signup", component: SignupComponent },
@@ -62,6 +64,7 @@ const routes: Routes = [
     FAQComponent,
     ForgotPasswordComponent,
     BookAppointmentComponent,
+    AddCartComponent,
   ],
   imports: [
     BrowserModule,
