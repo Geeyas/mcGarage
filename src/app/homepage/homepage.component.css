@@ -12,3 +12,7 @@
     border: 0px;
     border-radius: 5%;
 }
+
+.img-fluid {
+    box-shadow: 10px 5px 10px black;
+}
