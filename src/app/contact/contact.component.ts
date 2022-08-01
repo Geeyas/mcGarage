@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Interface, InterfaceService } from './data.service';
 
 @Component({
   selector: 'app-contact',
@@ -40,15 +39,6 @@ export class ContactComponent {
       this.descpMsg = "Message must be entered";
       return;
     } else {
-      let contData: Interface = {
-        name: this.name,
-        email: this.email,
-        subject: this.subject,
-        message: this.message
-      };
-
-      //this.contactData.addData(contData);
-
       this.nameMsg = "";
       this.emailMsg = "";
       this.subjectMsg = "";
