@@ -2,6 +2,14 @@
     height: 700px;
 }
 
+.verticalbutton {
+    position: fixed;
+    top: 50%;
+  }
+
+
+  
+
 @media only screen and (max-width: 200px) {
     .carousel-inner .carousel-item img {
         height: 70px;

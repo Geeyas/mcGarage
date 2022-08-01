@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   { path: "onlineOrder", component: OnlineOrderComponent },
   { path: "onlineOrder/cart", component: AddCartComponent },
-  { path: "quote", component: GetQuoteComponent },
+  { path: "home/quote", component: GetQuoteComponent },
   { path: "customisation", component: CustomisationComponent },
   { path: "login/signup", component: SignupComponent },
   { path: "login/forgotPassword", component: ForgotPasswordComponent },
@@ -41,6 +41,7 @@ const routes: Routes = [
   { path: "services/quote", component: GetQuoteComponent },
   { path: "login", component: LoginComponent },
   { path: "admin", component: AdminComponent },
+  {path:"bookAppointment", component:BookAppointmentComponent},
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: ErrorPageComponent }
 ]
