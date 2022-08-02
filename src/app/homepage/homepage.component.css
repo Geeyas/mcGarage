@@ -5,6 +5,7 @@
 .verticalbutton {
     position: fixed;
     top: 50%;
+
     transform: rotate(90deg);
     margin-left: -2.5%;
 

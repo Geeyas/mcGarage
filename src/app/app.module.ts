@@ -23,6 +23,8 @@ import { FAQComponent } from './faq/faq.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { AddCartComponent } from './add-cart/add-cart.component';
+import { TermsComponent } from './terms/terms.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 
 const routes: Routes = [
 
@@ -41,7 +43,9 @@ const routes: Routes = [
   { path: "services/quote", component: GetQuoteComponent },
   { path: "login", component: LoginComponent },
   { path: "admin", component: AdminComponent },
-  {path:"bookAppointment", component:BookAppointmentComponent},
+  { path: "terms", component: TermsComponent },
+  { path: "privacy", component: PrivacyPolicyComponent },
+  { path: "bookAppointment", component: BookAppointmentComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: ErrorPageComponent }
 ]
@@ -66,6 +70,8 @@ const routes: Routes = [
     ForgotPasswordComponent,
     BookAppointmentComponent,
     AddCartComponent,
+    TermsComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
