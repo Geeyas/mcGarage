@@ -1,0 +1,19 @@
+ ul {
+     list-style: none;
+ }
+
+ .containerTerms {
+    border: 1px solid white;
+    margin: 2%;
+    box-shadow: 5px 5px 30px rgb(119, 117, 117);
+ }
+
+ #terms  {
+    text-align: center;
+    color: #05337e;
+ }
+
+ ul li {
+    color: #05337e;
+    text-align: justify;
+ }

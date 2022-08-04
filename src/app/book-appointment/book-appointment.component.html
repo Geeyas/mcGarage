@@ -19,3 +19,31 @@
         </div>
     </nav>
 </div><!-- End Breadcrumbs -->
+<br>
+
+<div id="containerAppoint">
+    <h2>Book an Appointment</h2>
+    <div class="col-lg-8 fileds">
+        <form action="index.php" method="POST" role="form" class="php-email-form">
+            <div class=" form-group mt-3">
+                <input type="email" class="form-control" name="Email" id="email" placeholder="Your Email" required>
+                <div id="errMessage"></div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="text" class="form-control" name="Subject" id="subject" placeholder="Subject" required>
+                <div id="errMessage"></div>
+            </div>
+            <div class="form-group mt-3">
+                <textarea class="form-control" name="Message" rows="5" placeholder="Message" id="message"
+                    required></textarea>
+                <div id="errMessage"></div>
+            </div>
+            <div class="text-center">
+                <br>
+                <button type="submit">Book an Appointment</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<app-footer></app-footer>
