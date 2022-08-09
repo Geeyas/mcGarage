@@ -1,9 +1,9 @@
 <?php
 if (!empty($_POST)) {
     $servername = 'localhost';
-    $username = 'gachar10_geeyas';
-    $password = 'GeeyasAcharyaSCU';
-    $database = 'gachar10_mcGarage';
+    $username = 'root';
+    $password = '#Geenesh1';
+    $database = 'mcgarage';
 
     //database connection
     $conn = mysqli_connect($servername, $username, $password, $database);
@@ -15,8 +15,9 @@ if (!empty($_POST)) {
     $Number = $_POST['Number'];
     $Subject = $_POST['Subject'];
     $Message = $_POST['Message'];
+    $PersonID = $_POST['PersonID'];
 
-    $sql = "insert into ContactUs (Fullname, Email, Number, Subject, Message) values ('$Fullname', '$Email', '$Number', '$Subject', '$Message')";
+    $sql = "insert into contact_us (Fullname, Email, Number, Subject, Message) values ('$Fullname', '$Email', '$Number', '$Subject', '$Message')";
 
     $result = mysqli_query($conn, $sql);
 
