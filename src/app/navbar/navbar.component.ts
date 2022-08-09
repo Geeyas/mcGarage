@@ -9,6 +9,10 @@ export class NavbarComponent {
 
 
   constructor() { }
+
+  onDeactivate() {
+    window.scrollTo(0, 0);
+  }
 }
 
 
