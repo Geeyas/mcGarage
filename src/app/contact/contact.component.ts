@@ -18,6 +18,7 @@ export class ContactComponent {
   number: string = "";
   subject: string = "";
   message: string = "";
+  successMsg: string = "";
 
   // constructor(private contactData: InterfaceService) { }
 
@@ -49,6 +50,7 @@ export class ContactComponent {
       this.subject = "";
       this.message = "";
       this.number = "";
+      this.successMsg = "We have received your message!  One of our team member will be in touch with you shortly.";
     }
   }
 
