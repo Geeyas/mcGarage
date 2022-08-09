@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-info">
-                <a href="home#hero" class="logo d-flex align-items-center">
+                <a [routerLink]="['/home']" class="logo d-flex align-items-center">
                     <span><img src="assets/img/MC Garage-logo.png" alt="logo"></span>
                 </a>
 
@@ -18,26 +18,15 @@
             <div class="col-lg-2 col-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
-                    <li><a href="home">Home</a></li>
-                    <li><a href="about">About us</a></li>
-                    <li><a href="services">Services</a></li>
-                    <li><a href="onlineOrder">Online Order</a></li>
-                    <li><a href="pricing">Pricing</a></li>
-                    <li><a href="contact">Contact</a></li>
-                    <li><a href="quote">Get a Quote</a></li>
-                    <li><a href="terms">Terms and Conditions</a></li>
-                    <li><a href="privacy">Privacy policy</a></li>
-                </ul>
-            </div>
-
-            <div class="col-lg-2 col-6 footer-links">
-                <h4>Our Services</h4>
-                <ul>
-                    <li><a href="#">Car Service</a></li>
-                    <li><a href="#">Car Wrapping</a></li>
-                    <li><a href="#">Custom Addition</a></li>
-                    <li><a href="#">Wraps Price</a></li>
-                    <li><a href="#">Auto Parts</a></li>
+                    <li><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+                    <li><a [routerLink]="['/about']">About us</a></li>
+                    <li><a [routerLink]="['/services']">Services</a></li>
+                    <li><a [routerLink]="['/onlineOrder']">Online Order</a></li>
+                    <li><a [routerLink]="['/pricing']">Pricing</a></li>
+                    <li><a [routerLink]="['/contact']">Contact</a></li>
+                    <li><a [routerLink]="['/home/quote']">Get a Quote</a></li>
+                    <li><a [routerLink]="['/terms']">Terms and Conditions</a></li>
+                    <li><a [routerLink]="['/privacy']">Privacy policy</a></li>
                 </ul>
             </div>
 
@@ -63,3 +52,4 @@
     </div>
 
 </footer><!-- End Footer -->
+<router-outlet></router-outlet>

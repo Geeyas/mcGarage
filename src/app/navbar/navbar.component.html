@@ -2,7 +2,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-    <a routerLink="./home" class="logo d-flex align-items-center">
+    <a [routerLink]="['/home']" class="logo d-flex align-items-center">
       <img src="assets/img/MC Garage-logo.png" alt="logo" style="margin-left: -40px;">
     </a>
 
@@ -10,27 +10,28 @@
     <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="about" routerLinkActive="active">About</a></li>
-        <li class="dropdown"><a routerLink="services" routerLinkActive="active"><span>Services</span> <i
+        <li><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+        <li><a [routerLink]="['/about']" routerLinkActive="active">About</a></li>
+        <li class="dropdown"><a [routerLink]="['/services']" routerLinkActive="active"><span>Services</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
-            <li><a routerLink="services" (click)="service()">Servicing</a></li>
-            <li><a routerLink="services" (click)="wrapService()">Wrapping</a></li>
-            <li><a routerLink="services" (click)="customAdd()">Custom Addition</a></li>
+            <li><a [routerLink]="['/services']" (click)="service()">Servicing</a></li>
+            <li><a [routerLink]="['/services']" (click)="wrapService()">Wrapping</a></li>
+            <li><a [routerLink]="['/services']" (click)="customAdd()">Custom Addition</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a routerLink="onlineOrder" routerLinkActive="active"><span>Online Order</span> <i
+        <li class="dropdown"><a [routerLink]="['/onlineOrder']" routerLinkActive="active"><span>Online Order</span> <i
               class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>
-            <li><a routerLink="onlineOrder" (click)="orderWraps()">Wraps</a></li>
-            <li><a routerLink="onlineOrder" (click)="orderParts()">Auto-Parts</a></li>
+            <li><a [routerLink]="['/onlineOrder']" (click)="orderWraps()">Wraps</a></li>
+            <li><a [routerLink]="['/onlineOrder']" (click)="orderParts()">Auto-Parts</a></li>
           </ul>
         </li>
-        <li><a routerLink="customisation" routerLinkActive="active">Customisation</a></li>
-        <li><a routerLink="contact" routerLinkActive="active">Contact</a></li>
-        <li><a class="get-a-quote" routerLink="bookAppointment" routerLinkActive="active">Book Appointment</a></li>
-        <li><a class="bi bi-person-circle" style="font-size: 25px;" routerLink="./login"></a></li>
+        <li><a [routerLink]="['/customisation']" routerLinkActive="active">Customisation</a></li>
+        <li><a [routerLink]="['/contact']" routerLinkActive="active">Contact</a></li>
+        <li><a class="get-a-quote" [routerLink]="['/bookAppointment']" routerLinkActive="active">Book Appointment</a>
+        </li>
+        <li><a class="bi bi-person-circle" style="font-size: 25px;" [routerLink]="['/login']"></a></li>
       </ul>
     </nav><!-- .navbar -->
 
