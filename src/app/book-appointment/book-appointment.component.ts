@@ -21,6 +21,14 @@ export class BookAppointmentComponent {
   successMsg: string = "";
   constructor() { }
 
+  clear() {
+    this.errMsgName = "";
+    this.errMsgNumber = "";
+    this.errMsgApp = "";
+    this.errMsgEmail = "";
+    this.errMsgDate = "";
+  }
+
   validate() {
     if (!this.name) {
       this.errMsgName = "Full name required";
@@ -47,15 +55,10 @@ export class BookAppointmentComponent {
       this.email = "";
       this.appointment = ""
       this.date = "";
+      this.clear();
     }
   }
 
-  clear() {
-    this.errMsgName = "";
-    this.errMsgNumber = "";
-    this.errMsgApp = "";
-    this.errMsgEmail = "";
-    this.errMsgDate = "";
-  }
+ 
 
 }

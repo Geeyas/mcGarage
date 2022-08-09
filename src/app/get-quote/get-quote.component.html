@@ -27,26 +27,29 @@
     <section id="get-a-quote" class="get-a-quote">
         <div class="container" data-aos="fade-up">
             <div class="row g-0">
-                <!-- <div class="col-lg-5 quote-bg" style="background-image: url(../../assets/img/quotes.jpg);"></div> -->
                 <h2 style="text-align:center; color:#05337e">Get quotation from here.</h2>
                 <div>
                     <form action="" method="" class="php-email-form">
 
                         <div class="row gy-4">
                             <div class="col-md-12">
-                                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                                <input type="text" name="name" [(ngModel)]="name" (click)="clear()" class="form-control"
+                                    placeholder="Name" required>
                             </div>
 
                             <div class="col-md-12 ">
-                                <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                <input type="email" class="form-control" [(ngModel)]="email" (click)="clear()"
+                                    name="email" placeholder="Email" required>
                             </div>
 
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="phone" placeholder="Phone" required>
+                                <input type="text" class="form-control" [(ngModel)]="phone" (click)="clear()"
+                                    name="phone" placeholder="Phone" required>
                             </div>
 
                             <div class="dropdown">
-                                <select id="cars" name="cars" class="form-control">
+                                <select id="cars" [(ngModel)]="appointment" name="appointment" (click)="clear()"
+                                    class="form-control">
                                     <option value="">Select Option</option>
                                     <option value="General Enquiry">General-Enquiry</option>
                                     <option value="Servicing">Servicing</option>
@@ -56,20 +59,17 @@
 
                             </div>
 
-
-
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message"
-                                    required></textarea>
+                                <textarea class="form-control" [(ngModel)]="message" (click)="clear()" name="message"
+                                    rows="6" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <p style="text-align: center;color: red;">{{errMsg}}</p>
+                                <p style="text-align: center;color: green;">{{successMsg}} </p>
                             </div>
 
                             <div class="col-md-12 text-center">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your quote request has been sent successfully. Thank you!
-                                </div>
-
-                                <button type="submit">Get a quote</button>
+                                <button type="submit" (click)="getQuote()">Get a quote</button>
                             </div>
 
                         </div>
