@@ -1,19 +1,42 @@
- ul {
-     list-style: none;
- }
+ul {
+   list-style: none;
+}
 
- .containerTerms {
-    border: 1px solid white;
-    margin: 2%;
-    box-shadow: 5px 5px 30px rgb(119, 117, 117);
- }
+.containerTerms {
+   border: 1px solid white;
+   margin-left: 2%;
+   box-shadow: 5px 5px 30px rgb(119, 117, 117);
+   width: auto;
+}
 
- #terms  {
-    text-align: center;
-    color: #05337e;
- }
+#terms, p {
+   text-align: center;
+   color: #05337e;
+}
 
- ul li {
-    color: #05337e;
-    text-align: justify;
- }
+p, li {
+   width: 90vmax;
+}
+
+ul li {
+   color: #05337e;
+   text-align: justify;
+}
+
+#terms {
+   text-shadow: 0 0 10px black;
+   animation-name: glow;
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+   animation-direction: alternate;
+}
+
+@keyframes glow {
+   from {
+      text-shadow: 0 0 10px black;
+   }
+
+   to {
+      text-shadow: 0 0 30px rgb(122, 102, 102);
+   }
+}
