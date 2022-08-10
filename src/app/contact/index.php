@@ -1,30 +1,29 @@
 <?php
-if (!empty($_POST)) {
-    $servername = 'localhost';
-    $username = 'root';
-    $password = '#Geenesh1';
-    $database = 'mcgarage';
 
-    //database connection
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    if (!$conn) {
-        die('Connection Failed : ' . mysqli_connect_error());
-    }
-    $Fullname = $_POST['Fullname'];
-    $Email = $_POST['Email'];
-    $Number = $_POST['Number'];
-    $Subject = $_POST['Subject'];
-    $Message = $_POST['Message'];
-    $PersonID = $_POST['PersonID'];
+$name = $_POST['Fullname'];
+$number = $_POST['Number'];
+$email = $_POST['Email'];
+$subject = $_POST['Subject'];
+$message = $_POST['Message'];
 
-    $sql = "insert into contact_us (Fullname, Email, Number, Subject, Message) values ('$Fullname', '$Email', '$Number', '$Subject', '$Message')";
+$mailHeader = "From:" . $name . "<" . $email . ">\r\n";
+$receipent = "mcgarage6060@gmail.com";
 
-    $result = mysqli_query($conn, $sql);
+mail($receipent, $subject, $message, $mailHeader)
+    or die("Error");
 
-    if ($result) {
-        echo 'Data inserted Sucessfully';
-    } else {
-        echo 'Error' . mysqli_error($conn);
-    }
-    mysqli_close($conn);
-}
+echo '
+<html>
+<head>
+<title>Thanks you!</title>
+<style>
+h1{color:#05337e, text-align:center}
+</style>
+</head>
+<body>
+<h1>Message has been sent Successfully. One of our team member will be in touch with you!<h1>
+<a href="https://23838925.it.scu.edu.au">Home page</a>
+</body>
+</html>
+
+';
