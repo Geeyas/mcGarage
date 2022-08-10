@@ -25,33 +25,44 @@
             <h2>Sign-Up</h2>
             <div class="row gy-4">
                 <div class="col-md-12 ">
-                    <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                    <input type="text" class="form-control" name="name" [(ngModel)]="name" (click)="clear()"
+                        placeholder="Full Name" required>
                 </div>
                 <div class="col-md-12 ">
-                    <input type="text" class="form-control" name="number" placeholder="Contact Number" required>
+                    <input type="text" class="form-control" name="number" [(ngModel)]="number" (click)="clear()"
+                        placeholder="Contact Number" required>
                 </div>
-                <div class="col-md-12 text-justify">
-                    <span><b>Gender:</b></span> <br>
-                    <input type="radio" id="gender" name="gender" value="Male">
-                    <label for="age1">Male</label><br>
-                    <input type="radio" id="gender" name="gender" value="Female">
-                    <label for="age2">Female</label><br>
-                    <input type="radio" id="gender" name="gender" value="Other">
-                    <label for="age3">Other</label>
-                </div>
-                <div class="col-md-12 ">
-                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                <div class="col-md-12 text-center">
+                    <select id="gender" name="gender" [(ngModel)]="gender" (click)="clear()" class="form-control">
+                        <option value="">Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </div>
                 <div class="col-md-12 ">
-                    <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    <input type="email" class="form-control" name="email" [(ngModel)]="email" (click)="clear()"
+                        placeholder="Email" required>
                 </div>
                 <div class="col-md-12 ">
-                    <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password"
-                        required>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="password" (click)="clear()"
+                        placeholder="Password" required>
                 </div>
                 <div id="message" style="text-align: center; color:red"></div>
+                <div class="col-md-12 ">
+                    <span id="captcha">Prove that you are not a Robot:</span>
+                    <br>
+                    <div id="numbers">
+                        <span>{{num1}}</span> <span>&nbsp;&nbsp;+&nbsp;&nbsp;</span> <span>{{num2}}</span>
+                    </div>
+                </div>
+                <div class="col-md-12 ">
+                    <input type="number" class="form-control" name="captcha" [(ngModel)]="answer" (click)="clear()"
+                        placeholder="Enter the correct answer" required>
+                </div>
                 <div class="col-md-12 text-center">
-                    <button type="submit">Sign-Up</button>
+                    <p id="message">{{message}}</p>
+                    <button type="submit" (click)="register()">Sign-Up</button>
                 </div>
             </div>
         </form>
