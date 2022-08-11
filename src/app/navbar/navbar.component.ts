@@ -31,6 +31,7 @@ export class NavbarComponent {
 
   orderParts() {
     window.scrollTo(0, 1600);
+    window.scrollbars
   }
 
 }
