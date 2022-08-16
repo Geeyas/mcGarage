@@ -34,9 +34,7 @@
             <!-- End Google Maps -->
 
             <div class="row gy-4 mt-4">
-
                 <div class="col-lg-4">
-
                     <div class="info-item d-flex">
                         <i class="bi bi-geo-alt flex-shrink-0"></i>
                         <div>
@@ -65,7 +63,8 @@
 
                 <div class="col-lg-8">
                     <!-- <form> -->
-                    <form action="mail.php" method="POST" role="form" class="php-email-form" id="form">
+                    <form action="https://formsubmit.co/bf540f3b9c3176cb36295b5ca0af7ee7" method="POST" name="_captcha"
+                        value="false" role="form" class="php-email-form" id="form">
                         <div class="row">
                             <div class="col-md-6 form-group">
                                 <input type="text" name="Fullname" class="form-control" id="name"
@@ -89,8 +88,9 @@
                             <div id="errMessage">{{subjectMsg}}</div>
                         </div>
                         <div class="form-group mt-3">
-                            <textarea class="form-control" name="Message" rows="5" placeholder="Message" id="message"
-                                required (click)="doClear()" [(ngModel)]=message></textarea>
+                            <textarea class="form-control" name="Message/Feedback" rows="5"
+                                placeholder="Leave your message or Feedback to our service" id="message" required
+                                (click)="doClear()" [(ngModel)]=message></textarea>
                             <div id="errMessage">{{descpMsg}}</div>
                         </div>
                         <div class="text-center">
