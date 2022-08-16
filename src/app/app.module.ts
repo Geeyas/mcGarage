@@ -23,6 +23,8 @@ import { BookAppointmentComponent } from './book-appointment/book-appointment.co
 import { AddCartComponent } from './add-cart/add-cart.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { InjectableService } from './appointment.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
 
@@ -73,9 +75,10 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [InjectableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

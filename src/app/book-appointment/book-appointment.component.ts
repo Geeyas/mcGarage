@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { InjectableService, MyData } from '../appointment.service';
+
 
 @Component({
   selector: 'app-book-appointment',
@@ -19,7 +21,8 @@ export class BookAppointmentComponent {
   errMsgEmail: string = "";
   errMsgDate: string = "";
   successMsg: string = "";
-  constructor() { }
+
+  constructor(private api: InjectableService) { }
 
   clear() {
     this.errMsgName = "";
@@ -27,6 +30,7 @@ export class BookAppointmentComponent {
     this.errMsgApp = "";
     this.errMsgEmail = "";
     this.errMsgDate = "";
+    this.successMsg = "";
   }
 
   validate() {
@@ -49,16 +53,24 @@ export class BookAppointmentComponent {
       this.errMsgDate = "Select Date";
       return;
     } else {
-      this.successMsg = "Appointment Booked succsfully";
-      this.name = "";
-      this.number = "";
-      this.email = "";
-      this.appointment = ""
-      this.date = "";
-      this.clear();
+      this.api.doAdd(new MyData(this.name, this.number, this.email, this.appointment, this.date)).subscribe(
+        (data: MyData) => {
+          //clearing all the input fields to get ready for next input after successful data entery
+          this.name = "";
+          this.number = "";
+          this.email = "";
+          this.appointment = ""
+          this.date = "";
+          this.errMsgName = "";
+          this.errMsgNumber = "";
+          this.errMsgApp = "";
+          this.errMsgEmail = "";
+          this.errMsgDate = "";
+          this.successMsg = "Appointment Booked succsfully";
+        }, (error) => {
+          this.successMsg = error + "Problem in booking an appointment";
+        });
+
     }
   }
-
- 
-
 }

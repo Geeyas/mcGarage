@@ -1,0 +1,20 @@
+{
+  "post": [
+    {
+      "fullname": "Full name",
+      "contactNumber": "0123456789",
+      "email": "email@email.com",
+      "appointment": "appointment",
+      "date": "26/08/2022",
+      "id": 1
+    },
+    {
+      "fullname": "Geeyas Acharya",
+      "contactNumber": "0415040856",
+      "email": "geeyasc@gmail.com",
+      "appointment": "Wrapping",
+      "date": "2022-09-02",
+      "id": 2
+    }
+  ]
+}

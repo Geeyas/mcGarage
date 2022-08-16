@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InjectableService } from '../appointment.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: InjectableService) { }
 
   ngOnInit(): void {
   }
