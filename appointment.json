@@ -1,11 +1,11 @@
 {
   "post": [
     {
-      "fullname": "Full name",
+      "fullname": "Sample name",
       "contactNumber": "0123456789",
-      "email": "email@email.com",
-      "appointment": "appointment",
-      "date": "26/08/2022",
+      "email": "sample@email.com",
+      "appointment": "Sample",
+      "date": "00/00/0000",
       "id": 1
     },
     {

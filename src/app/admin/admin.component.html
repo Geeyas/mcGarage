@@ -13,28 +13,28 @@
         <div class="container">
             <ol>
                 <li style="color: blue;">Home</li>
-                <li>Admin Panel</li>
+                <li><button (click)="getData()">Admin Panel</button> </li>
             </ol>
         </div>
     </nav>
 </div><!-- End Breadcrumbs -->
+<span id="errMsg">{{errorMessage}}</span>
 <div class="table" id="table">
     <table>
         <thead>
-            <th> ID </th>
             <th> Full Name </th>
-            <th> Email </th>
             <th> Phone Number </th>
-            <th> Subject </th>
-            <th> Message </th>
+            <th> Email </th>
+            <th> Appointment </th>
+            <th> Date </th>
         </thead>
         <tbody>
-            <tr>
-                <!-- <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td> -->
+            <tr *ngFor="let data of allData">
+                <td>{{data.fullname}}</td>
+                <td>{{data.contactNumber}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.appointment}}</td>
+                <td>{{data.date}}</td>
         </tbody>
     </table>
 </div>
