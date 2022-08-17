@@ -1,3 +1,5 @@
+
+// JS file from boostrap
 /**
 * Template Name: Logis - v1.1.0
 * Template URL: https://bootstrapmade.com/logis-bootstrap-logistics-website-template/

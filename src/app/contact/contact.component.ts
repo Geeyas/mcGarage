@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -20,9 +21,7 @@ export class ContactComponent {
   message: string = "";
   successMsg: string = "";
 
-  // constructor(private contactData: InterfaceService) { }
-
-  sendMsg() {
+  async sendMsg() {
     if (!this.name) {
       this.nameMsg = "Name must be entered";
       return;
@@ -40,6 +39,14 @@ export class ContactComponent {
       this.descpMsg = "Message must be entered";
       return;
     } else {
+      await emailjs.send("service_8umtamb", "template_tjimcid", {
+        from_name: this.name,
+        fullname: this.name,
+        number: this.number,
+        email: this.email,
+        subject: this.subject,
+        message: this.message,
+      }, "A_iw6yoFPOSo578BH");
       this.nameMsg = "";
       this.emailMsg = "";
       this.subjectMsg = "";
