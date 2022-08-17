@@ -39,6 +39,7 @@ export class ContactComponent {
       this.descpMsg = "Message must be entered";
       return;
     } else {
+      this.successMsg = "Message Sending ..."
       await emailjs.send("service_8umtamb", "template_tjimcid", {
         from_name: this.name,
         fullname: this.name,
@@ -46,18 +47,24 @@ export class ContactComponent {
         email: this.email,
         subject: this.subject,
         message: this.message,
-      }, "A_iw6yoFPOSo578BH");
-      this.nameMsg = "";
-      this.emailMsg = "";
-      this.subjectMsg = "";
-      this.descpMsg = "";
-      this.numberMsg = "";
-      this.name = "";
-      this.email = "";
-      this.subject = "";
-      this.message = "";
-      this.number = "";
-      this.successMsg = "We have received your message!  One of our team member will be in touch with you shortly.";
+      }, "A_iw6yoFPOSo578BH").then((result: EmailJSResponseStatus) => {
+        this.nameMsg = "";
+        this.emailMsg = "";
+        this.subjectMsg = "";
+        this.descpMsg = "";
+        this.numberMsg = "";
+        this.name = "";
+        this.email = "";
+        this.subject = "";
+        this.message = "";
+        this.number = "";
+        this.successMsg = "Message Sent Successfully!!";
+      }, (error) => {
+        this.successMsg = "Error in sending message. Please try again";
+      });
+
+
+
     }
   }
 
