@@ -17,6 +17,7 @@ export class GetQuoteComponent {
   successMsg: string = "";
 
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexPhone: RegExp = /^\d{10}$/;
 
   constructor() { }
 
@@ -37,6 +38,9 @@ export class GetQuoteComponent {
       return;
     } else if (!this.phone) {
       this.errMsg = "Phone is required";
+      return;
+    } else if (this.regexPhone.test(this.phone) == false) {
+      this.errMsg = "Enter 10 digit number";
       return;
     } else if (isNaN(parseInt(this.phone))) {
       this.errMsg = "Phone number isn't valid";

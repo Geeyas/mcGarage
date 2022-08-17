@@ -22,6 +22,7 @@ export class ContactComponent {
   successMsg: string = "";
 
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexPhone: RegExp = /^\d{10}$/;
 
   async sendMsg() {
     if (!this.name) {
@@ -32,6 +33,9 @@ export class ContactComponent {
       return;
     } else if (isNaN(parseInt(this.number))) {
       this.numberMsg = "Invalid Number";
+      return;
+    } else if (this.regexPhone.test(this.number) == false) {
+      this.numberMsg = "Enter 10 digit number";
       return;
     } else if (!this.email) {
       this.emailMsg = "Email must be entered";

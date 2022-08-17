@@ -23,6 +23,7 @@ export class BookAppointmentComponent {
   successMsg: string = "";
 
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexPhone: RegExp = /^\d{10}$/;
 
   constructor(private api: InjectableService) { }
 
@@ -44,6 +45,9 @@ export class BookAppointmentComponent {
       return;
     } else if (isNaN(parseInt(this.number))) {
       this.errMsgNumber = "Contact number is not valid";
+      return;
+    } else if (this.regexPhone.test(this.number) == false) {
+      this.errMsgNumber = "Enter 10 digit number";
       return;
     } else if (!this.email) {
       this.errMsgEmail = "Email address required";

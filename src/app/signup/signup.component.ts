@@ -20,6 +20,7 @@ export class SignupComponent {
   answer: number = 0;
 
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexPhone: RegExp = /^\d{10}$/;
 
   constructor() { }
 
@@ -29,6 +30,9 @@ export class SignupComponent {
       return;
     } else if (!this.number) {
       this.message = "Phone Number is required";
+      return;
+    } else if (this.regexPhone.test(this.number) == false) {
+      this.message = "Enter 10 digit number";
       return;
     } else if (isNaN(parseInt(this.number))) {
       this.message = "Phone Number is not valid!!";
