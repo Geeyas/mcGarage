@@ -21,16 +21,23 @@ export class ContactComponent {
   message: string = "";
   successMsg: string = "";
 
+  regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   async sendMsg() {
     if (!this.name) {
       this.nameMsg = "Name must be entered";
       return;
     } else if (!this.number) {
       this.numberMsg = "Number must be entered";
+      return;
     } else if (isNaN(parseInt(this.number))) {
       this.numberMsg = "Invalid Number";
+      return;
     } else if (!this.email) {
       this.emailMsg = "Email must be entered";
+      return;
+    } else if (this.regexEmail.test(this.email) == false) {
+      this.emailMsg = "Email is not valid";
       return;
     } else if (!this.subject) {
       this.subjectMsg = "Subject must be entered";
@@ -62,9 +69,6 @@ export class ContactComponent {
       }, (error) => {
         this.successMsg = "Error in sending message. Please try again";
       });
-
-
-
     }
   }
 
@@ -74,6 +78,7 @@ export class ContactComponent {
     this.subjectMsg = "";
     this.descpMsg = "";
     this.numberMsg = "";
+    this.successMsg = "";
   }
 
 }

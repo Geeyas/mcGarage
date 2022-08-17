@@ -22,6 +22,8 @@ export class BookAppointmentComponent {
   errMsgDate: string = "";
   successMsg: string = "";
 
+  regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   constructor(private api: InjectableService) { }
 
   clear() {
@@ -45,6 +47,9 @@ export class BookAppointmentComponent {
       return;
     } else if (!this.email) {
       this.errMsgEmail = "Email address required";
+      return;
+    } else if (this.regexEmail.test(this.email) == false) {
+      this.errMsgEmail = "Email is not valid";
       return;
     } else if (this.appointment == "") {
       this.errMsgApp = "Select Appointment for";

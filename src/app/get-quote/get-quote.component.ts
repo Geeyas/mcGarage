@@ -16,6 +16,8 @@ export class GetQuoteComponent {
   errMsg: string = "";
   successMsg: string = "";
 
+  regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   constructor() { }
 
   clear() {
@@ -29,6 +31,9 @@ export class GetQuoteComponent {
       return;
     } else if (!this.email) {
       this.errMsg = "Email is required";
+      return;
+    } else if (this.regexEmail.test(this.email) == false) {
+      this.errMsg = "Email is not valid";
       return;
     } else if (!this.phone) {
       this.errMsg = "Phone is required";

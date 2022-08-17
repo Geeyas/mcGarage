@@ -19,6 +19,8 @@ export class SignupComponent {
   message: string = "";
   answer: number = 0;
 
+  regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
   constructor() { }
 
   register() {
@@ -36,6 +38,9 @@ export class SignupComponent {
       return;
     } else if (!this.email) {
       this.message = "Email is required";
+      return;
+    } else if (this.regexEmail.test(this.email) == false) {
+      this.message = "Email is not valid";
       return;
     } else if (!this.password) {
       this.message = "Password is required";
