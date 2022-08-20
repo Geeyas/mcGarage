@@ -1,27 +1,31 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core'; @Component({
   selector: 'app-book-appointment',
   templateUrl: './book-appointment.component.html',
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent {
+  url: string = "https://mc-garage-d0474-default-rtdb.firebaseio.com/appointmentData.json";
 
   name: string = "";
   number: string = "";
   email: string = "";
   appointment: string = ""
   date: string = "";
+  time: string = "";
 
   errMsgName: string = "";
   errMsgNumber: string = "";
   errMsgApp: string = "";
   errMsgEmail: string = "";
   errMsgDate: string = "";
+  errMsgTime: string = "";
   successMsg: string = "";
 
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexPhone: RegExp = /^\d{10}$/;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   clear() {
     this.errMsgName = "";
@@ -32,7 +36,10 @@ export class BookAppointmentComponent {
     this.successMsg = "";
   }
 
-  validate() {
+  async validate(appointmentData: { name: string, number: string, email: string, appointment: string, date: string, time: string }) {
+
+    const header = new HttpHeaders({ 'myHeader': 'Appointment Data' });
+
     if (!this.name) {
       this.errMsgName = "Full name required";
       return;
@@ -57,18 +64,28 @@ export class BookAppointmentComponent {
     } else if (!this.date) {
       this.errMsgDate = "Select Date";
       return;
-    } else {
-      this.name = "";
-      this.number = "";
-      this.email = "";
-      this.appointment = ""
-      this.date = "";
-      this.errMsgName = "";
-      this.errMsgNumber = "";
-      this.errMsgApp = "";
-      this.errMsgEmail = "";
-      this.errMsgDate = "";
-      this.successMsg = "Appointment Booked succsfully";
+    } else if (!this.time) {
+      this.errMsgTime = "Select Time";
+      return;
+    }
+    else {
+      await this.http.post(this.url, appointmentData, { headers: header }).subscribe((response) => {
+        console.log(response);
+        this.name = "";
+        this.number = "";
+        this.email = "";
+        this.appointment = ""
+        this.date = "";
+        this.time = "";
+        this.errMsgName = "";
+        this.errMsgNumber = "";
+        this.errMsgApp = "";
+        this.errMsgEmail = "";
+        this.errMsgDate = "";
+        this.successMsg = "Booking Successfull";
+      });
+
+      this.successMsg = "Booking...";
 
     }
   }

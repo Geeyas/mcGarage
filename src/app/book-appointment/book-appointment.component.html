@@ -24,7 +24,7 @@
 <div id="containerAppoint">
     <h2>Book an Appointment</h2>
     <div class="col-lg-8 fileds">
-        <form action="" method="" role="form" class="php-email-form">
+        <form role="form" class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate(appointmentForm.value)">
             <div class=" form-group mt-3">
                 <input type="text" class="form-control" name="name" [(ngModel)]="name" (click)="clear()" id="name"
                     placeholder="Full name" required>
@@ -56,10 +56,29 @@
                     required>
                 <div id="errMessage">{{errMsgDate}}</div>
             </div>
+
+            <div class="form-group mt-3 dropdown">
+                <select id="time" name="time" [(ngModel)]="time" (click)="clear()" class="form-control">
+                    <option value="">Select Time</option>
+                    <option value="8">8 AM</option>
+                    <option value="9">9 AM</option>
+                    <option value="10">10 AM</option>
+                    <option value="11">11 AM</option>
+                    <option value="12">12 AM</option>
+                    <option value="1">1 PM</option>
+                    <option value="2">2 PM</option>
+                    <option value="3">3 PM</option>
+                    <option value="4">4 PM</option>
+                    <option value="5">5 PM</option>
+                    <option value="6">6 PM</option>
+                </select>
+                <div id="errMessage">{{errMsgTime}}</div>
+            </div>
+
             <div class="text-center">
                 <div style="color:green">{{successMsg}}</div>
                 <br>
-                <button type="submit" (click)="validate()">Book an Appointment</button>
+                <button type="submit">Book an Appointment</button>
 
             </div>
         </form>
