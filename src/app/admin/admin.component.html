@@ -27,15 +27,17 @@
             <th> Email </th>
             <th> Appointment </th>
             <th> Date </th>
+            <th> Time </th>
         </thead>
         <tbody>
-            <!-- <tr *ngFor="let data of allData">
-                <td>{{data.fullname}}</td>
-                <td>{{data.contactNumber}}</td>
-                <td>{{data.email}}</td>
+            <tr *ngFor="let data of allData">
+                <td>{{data.name}}</td>
+                <td>{{data.number}}</td>
+                <td>{{data.Email}}</td>
                 <td>{{data.appointment}}</td>
                 <td>{{data.date}}</td>
-            </tr> -->
+                <td>{{data.time}}</td>
+            </tr>
         </tbody>
     </table>
 </div>

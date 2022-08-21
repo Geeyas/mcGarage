@@ -82,11 +82,15 @@ export class BookAppointmentComponent {
         this.errMsgApp = "";
         this.errMsgEmail = "";
         this.errMsgDate = "";
-        this.successMsg = "Booking Successfull";
+        this.successMsg = "Booked Successfully";
       });
 
       this.successMsg = "Booking...";
 
     }
+  }
+
+  private fetchProducts() {
+    
   }
 }
