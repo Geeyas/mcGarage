@@ -1,9 +1,6 @@
 <section id="hero" class="hero d-flex align-items-center">
-    <!-- <video-background source="myVideo"></video-background> -->
-    <!-- <video autoplay muted loop id="myVideo"> -->
-    <video autoplay muted loop playsinline preload="auto" onloadedmetadata="this.muted = true">
-        <source [src]="['assets/img/background-video.mp4']" type="video/mp4" oncanplay="this.play()"
-            onloadedmetadata="this.muted = true">
+    <video autoplay muted loop playsinline preload="auto" onloadedmetadata="this.muted = true" oncanplay="this.play()">
+        <source [src]="['assets/img/background-video.mp4']" type="video/mp4">
     </video>
 </section>
 <main id="main">

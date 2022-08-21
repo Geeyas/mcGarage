@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: "home/quote", component: GetQuoteComponent },
   { path: "customisation", component: CustomisationComponent },
   { path: "login/signup", component: SignupComponent },
-  { path: "login/forgotPassword", component: ForgotPasswordComponent },
+  { path: "forgotPassword", component: ForgotPasswordComponent },
   { path: "services/bookAppointment", component: BookAppointmentComponent },
   { path: "services/quote", component: GetQuoteComponent },
   { path: "login", component: LoginComponent },
