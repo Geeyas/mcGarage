@@ -1,11 +1,15 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core'; @Component({
+import { Component } from '@angular/core'; import { map } from 'rxjs';
+@Component({
   selector: 'app-book-appointment',
   templateUrl: './book-appointment.component.html',
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent {
   url: string = "https://mc-garage-d0474-default-rtdb.firebaseio.com/appointmentData.json";
+
+  allData = [];
+  data: string = '';
 
   name: string = "";
   number: string = "";
@@ -69,6 +73,7 @@ export class BookAppointmentComponent {
       return;
     }
     else {
+      this.data = JSON.stringify(this.allData);
       await this.http.post(this.url, appointmentData, { headers: header }).subscribe((response) => {
         console.log(response);
         this.name = "";
@@ -83,14 +88,24 @@ export class BookAppointmentComponent {
         this.errMsgEmail = "";
         this.errMsgDate = "";
         this.successMsg = "Booked Successfully";
+        this.fetchData();
       });
-
       this.successMsg = "Booking...";
-
     }
   }
 
-  private fetchProducts() {
-    
+  private async fetchData() {
+    await this.http.get(this.url).pipe(map((responseMap) => {
+      const products = [];
+      for (const key in responseMap) {
+        if (responseMap.hasOwnProperty(key)) {
+          products.push({ ...responseMap[key], id: key })
+        }
+      }
+      this.allData = products;
+      return products;
+    })).subscribe((response) => {
+      console.log(response);
+    })
   }
 }

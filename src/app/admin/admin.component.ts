@@ -34,7 +34,6 @@ export class AdminComponent implements OnInit {
           products.push({ ...responseMap[key], id: key })
         }
       }
-      // this.allData = (JSON.parse(products));
       this.allData = products;
       return products;
     })).subscribe((response) => {
