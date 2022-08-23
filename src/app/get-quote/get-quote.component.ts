@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-get-quote',
@@ -26,7 +27,7 @@ export class GetQuoteComponent {
     this.successMsg = "";
   }
 
-  getQuote() {
+  async getQuote() {
     if (!this.name) {
       this.errMsg = "Name is required";
       return;
@@ -52,13 +53,29 @@ export class GetQuoteComponent {
       this.errMsg = "Message is required";
       return;
     } else {
-      this.successMsg = "Your quote request has been sent successfully to your email. Thank you!"
-      this.name = "";
-      this.email = "";
-      this.phone = "";
-      this.appointment = "";
-      this.message = "";
-      this.errMsg = "";
+      this.successMsg = "Sending quote request....";
+      await emailjs.send("service_8umtamb", "template_x5rq1qz", {
+        from_name: this.name,
+        QuoteService: this.appointment,
+        name: this.name,
+        phone: this.phone,
+        email: this.email,
+        subject: this.email,
+        message: this.message,
+      }, "A_iw6yoFPOSo578BH").then((result: EmailJSResponseStatus) => {
+        this.successMsg = "Quote request has been sent successfully. You will receive your request soon to your email."
+        this.name = "";
+        this.email = "";
+        this.phone = "";
+        this.appointment = "";
+        this.message = "";
+        this.errMsg = "";
+      }, (error) => {
+        this.successMsg = "Error in sending quote request. Please try again!!";
+      });
+
+
+
     }
 
   }
