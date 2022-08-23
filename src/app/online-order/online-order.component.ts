@@ -63,6 +63,14 @@ export class OnlineOrderComponent implements OnInit {
       "title": "Dark Shades",
       "price": "$20",
       "desc": "some text dark shades"
+    },
+
+    {
+      "id": 9,
+      "img": "assets/img/8.jpg",
+      "title": " Shades",
+      "price": "$20",
+      "desc": "some text dark shades"
     }
   ];
 
