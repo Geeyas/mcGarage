@@ -1,0 +1,14 @@
+#usefulLinks ul li {
+    color: white;
+    list-style-type: none;
+    margin-bottom: 5%;
+}
+
+#usefulLinks ul li a {
+    color: white;
+}
+#usefulLinks ul li a:hover {
+    color: grey;
+    font-size: 15px;
+    text-shadow: 0 0 10px black;
+}
