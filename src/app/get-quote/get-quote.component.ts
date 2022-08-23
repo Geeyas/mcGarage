@@ -73,9 +73,6 @@ export class GetQuoteComponent {
       }, (error) => {
         this.successMsg = "Error in sending quote request. Please try again!!";
       });
-
-
-
     }
 
   }
