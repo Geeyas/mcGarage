@@ -29,7 +29,6 @@ export class SignupComponent {
   url: string = "https://mc-garage-d0474-default-rtdb.firebaseio.com/signUp.json";
   allData = [];
 
-
   constructor(private http: HttpClient, private router: Router) { }
 
   async register(signUpData: { name: string, number: string, gender: string, email: string, password: string }) {
@@ -69,11 +68,10 @@ export class SignupComponent {
           this.password = "";
           this.Successmessage = "New User has been Registered Successfully";
           this.answer = 0;
-          setInterval(() => {
+          setTimeout(() => {
             this.router.navigate(['/login']);
           }, 1500)
         })
-
       } else {
         window.alert("Invalid Captcha!!!");
       }
