@@ -26,10 +26,11 @@ export class LoginComponent {
 
       if (this.username === this.adminUsername && this.password === this.adminPassword) {
         this.router.navigate(['/admin']);
+      } else {
+        this.username = "";
+        this.password = "";
+        this.message = "Logged in Successfully";
       }
-      this.username = "";
-      this.password = "";
-      this.message = "Logged in Successfully";
     }
   }
 

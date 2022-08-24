@@ -32,12 +32,20 @@ const routes: Routes = [
   { path: "services", component: ServicesComponent },
   { path: "contact", component: ContactComponent },
   { path: "onlineOrder", component: OnlineOrderComponent },
+<<<<<<< HEAD
   { path: "onlineOrder/cart", component: AddCartComponent },
+=======
+  { path: "cart", component: AddCartComponent },
+>>>>>>> 4244b79f4a1e22e37991e38cc8cb2cb072c5bbe9
   { path: "quote", component: GetQuoteComponent },
   { path: "customisation", component: CustomisationComponent },
   { path: "signup", component: SignupComponent },
   { path: "forgotPassword", component: ForgotPasswordComponent },
   { path: "bookAppointment", component: BookAppointmentComponent },
+<<<<<<< HEAD
+=======
+  { path: "quote", component: GetQuoteComponent },
+>>>>>>> 4244b79f4a1e22e37991e38cc8cb2cb072c5bbe9
   { path: "login", component: LoginComponent },
   { path: "admin", component: AdminComponent },
   { path: "terms", component: TermsComponent },

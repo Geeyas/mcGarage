@@ -105,7 +105,7 @@ export class BookAppointmentComponent {
       this.allData = products;
       return products;
     })).subscribe((response) => {
-      console.log(response);
+      // console.log(response);
     })
   }
 }

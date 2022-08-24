@@ -21,7 +21,7 @@
 </div><!-- End Breadcrumbs -->
 <section id="login" class="get-a-quote">
     <div class="container" data-aos="fade-up">
-        <form action="" method="">
+        <form #signUpForm = "ngForm" (ngSubmit)="register(signUpForm.value)">
             <h2>Sign-Up</h2>
             <div class="row gy-4">
                 <div class="col-md-12 ">
@@ -62,7 +62,8 @@
                 </div>
                 <div class="col-md-12 text-center">
                     <p id="message">{{message}}</p>
-                    <button type="submit" (click)="register()">Sign-Up</button>
+                    <p style="color: green;">{{Successmessage}}</p>
+                    <button type="submit">Sign-Up</button>
                 </div>
             </div>
         </form>

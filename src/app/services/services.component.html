@@ -24,15 +24,11 @@
     <!-- ======= Services Section ======= -->
     <section id="service" class="services pt-0">
         <div class="container" data-aos="fade-up">
-
             <div class="section-header">
                 <span>Our Services</span>
                 <h2>Our Services</h2>
-
             </div>
-
             <div class="row gy-4">
-
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card">
                         <h3><a [routerLink]="['/bookAppointment']" class="stretched-link">Servicing</a></h3>
@@ -55,7 +51,7 @@
                             Body kits are sold according to the make and model of the car. Can help to increase the
                             engine performance and the appearance of the car. The kits can be ordered on customer’s
                             demand
-                            if in case, the particular model’s kit is unavailable.
+                            if in case, the particular model's kit is unavailable.
                         </p>
                     </div>
                 </div><!-- End Card Item -->
@@ -99,20 +95,21 @@
                 data-aos-delay="100">
                 <div class="col-md-10" id="card" data-aos="fade-up" data-aos-delay="100">
                     <h3 id="servicess">Service</h3>
-                    <p>
+                    <p style="text-align: center;">
                         There are multiple servicing options that we provide to the customers.
                     </p>
                     <ul>
-                        <li><i class="bi bi-check"></i> Interim service: This service is not the full service and is
+                        <li><i class="bi bi-check"></i> <b>Interim service: </b> This service is not the full service
+                            and is
                             to be done every 6 months or 5000-6000 km. It helps to address any issues that might be
                             caused by driving extra kilometers than average. The service includes vehicle safety
                             inspection, engine oil and filter change, top up brake fluid and coolant. </li>
-                        <li><i class="bi bi-check"></i> Full service: Generally done every 10000 – 12000 km
+                        <li><i class="bi bi-check"></i> <b>Full service: </b> Generally done every 10000 – 12000 km
                             as it makes sure that the car is running smoothly and efficiently while reducing the
                             risks of a break-down. This service includes inspection of the vehicle topping up the
                             fluids, changing the oil and filters, steering alignment, suspension and reviewing
                             spark plugs and changing them if required</li>
-                        <li><i class="bi bi-check"></i> Major service: done every 30000 – 35000 km. Major service
+                        <li><i class="bi bi-check"></i> <b>Major service: </b>done every 30000 - 35000 km. Major service
                             includes all that full service offers but in much more detail. All major parts are
                             inspected
                             thoroughly including motor and timing belts. The service includes change of sparkplugs,
@@ -121,7 +118,7 @@
                     </ul>
                 </div>
                 <div class="col-md-12 text-center" id="card-button">
-                    <button routerLink="quote">Get a quote</button>
+                    <button [routerLink]="['/quote']">Get a quote</button>
                 </div>
             </div><!-- Features Item -->
             <br>
@@ -129,11 +126,11 @@
                 style="margin-top: 0.65%;">
                 <div class="col-md-10" id="card">
                     <h3 id="wrapping">Car/Bike Wraps</h3>
-                    <p>
+                    <p><i class="bi bi-check" style="color: blue;"></i>
                         Car/Bike wrapping is a huge vinyl sheets which can be molded into any shape to cover the car
                         directly. It can change the appearance of the car giving it a new look.
                     </p>
-                    <p>
+                    <p><i class="bi bi-check" style="color: blue;"></i>
                         Wraps prevent the paint damage by giving an extra layer of vinyl on top of the original paint.
                         The original paint is protected which increases the market value of the car. Also, the vinyl
                         wraps make the car
@@ -141,7 +138,7 @@
                     </p>
                 </div>
                 <div class="col-md-12 text-center" id="card-button">
-                    <button routerLink="quote">Get a quote</button>
+                    <button [routerLink]="['/quote']">Get a quote</button>
                 </div>
             </div><!-- Features Item -->
             <br>
@@ -149,7 +146,7 @@
                 style="margin-top: 1%;">
                 <div class="col-md-10" id="customAddition">
                     <h3 style="margin-left:25%">Custom Addition</h3>
-                    <p>There are different customisations which we offer</p>
+                    <p style="text-align: center;">There are different customisations which we offer</p>
                     <ul>
                         <li><i class="bi bi-check"></i> Window tinting and head/tail light tints</li>
                         <li><i class="bi bi-check"></i> Body kit and exhaust modifications.</li>
@@ -157,7 +154,7 @@
                     </ul>
                 </div>
                 <div class="col-md-12 text-center" id="card-button">
-                    <button routerLink="quote">Get a quote</button>
+                    <button [routerLink]="['/quote']">Get a quote</button>
                 </div>
             </div><!-- Features Item -->
         </div>

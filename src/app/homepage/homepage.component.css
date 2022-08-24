@@ -27,9 +27,7 @@
 
 .verticalbutton button a:hover {
     transition: 2s;
-    /* font-size: 25px; */
     color: #05337e;
-    /* box-shadow: 0 0 20px black; */
 }
 
 .verticalbutton button:hover {
@@ -39,9 +37,43 @@
 }
 
 
-@media only screen and (max-width: 200px) {
+@media only screen and (max-width: 600px) {
     .carousel-inner .carousel-item img {
-        height: 70px;
+        height: 500px;
+    }
+
+    .verticalbutton {
+        position: fixed;
+        top: 50%;
+        transform: rotate(90deg);
+        margin-left: -2.5%;
+        size: 50px;
+    }
+
+    .verticalbutton button {
+        transition: 3s;
+        background-color: rgb(228, 150, 5);
+        border: none;
+        font-family: 'Oswald', sans-serif;
+        width: 150px;
+        font-size: 20px;
+        box-shadow: 5px 5px 20px black;
+
+    }
+
+    .verticalbutton button a {
+        color: white;
+    }
+
+    .verticalbutton button a:hover {
+        transition: 2s;
+        color: #05337e;
+    }
+
+    .verticalbutton button:hover {
+        transition: 2s;
+        background-color: white;
+        border-radius: 20%;
     }
 }
 
