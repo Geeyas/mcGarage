@@ -20,7 +20,6 @@ export class AdminComponent implements OnInit {
   }
 
   getData() {
-    // this.errorMessage = 'Fetching Data';
     this.fetchData();
   }
 
@@ -37,7 +36,7 @@ export class AdminComponent implements OnInit {
       this.allData = products;
       return products;
     })).subscribe((response) => {
-      console.log(response);
+      // console.log(response); ----> this response contains all the values getting from database
     })
   }
 
