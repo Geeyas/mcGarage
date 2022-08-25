@@ -12,7 +12,7 @@
     <nav>
         <div class="container">
             <ol>
-                <li style="color: blue;">Home</li>
+                <li><a [routerLink]="['/home']" style="color:#05337e;">Home</a></li>
                 <li>Login</li>
             </ol>
         </div>
@@ -24,7 +24,7 @@
         <form action="" method="">
             <h2>Login</h2>
             <div id="cont">
-                
+
                 <div class="row gy-3">
                     <div class="col-md-12" id="input">
                         <input type="email" class="form-control" name="email" [(ngModel)]="username" (click)="clear()"
