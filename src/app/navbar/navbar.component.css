@@ -1,0 +1,9 @@
+
+@media only screen and (max-width: 768px) {
+    .navbarstyle {position: absolute;
+        right: 10px;
+        top:20px;
+        width: 205px;
+        height: 383px;}
+    
+    }
