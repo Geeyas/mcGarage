@@ -19,81 +19,32 @@
     </nav>
 </div><!-- End Breadcrumbs -->
 
-<section class="vh-100" style="background-color: white;">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-                <div class="card shadow-2-strong" style="border-radius: 1rem;"style="background-color: #05337e;">
-                    <div class="card-body p-5 text-center">
-
-                        <h3 class="mb-5">Sign in</h3>
-
-                        <div class="form-outline mb-4">
-                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="email"
-                                [(ngModel)]="username" (click)="clear()">
-                            <label class="form-label" for="typeEmailX-2">Email</label>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg"
-                                name="password" [(ngModel)]="password" (click)="clear()">
-                            <label class="form-label" for="typePasswordX-2">Password</label>
-                        </div>
-
-                        <!-- Checkbox -->
-                        <div class="form-check d-flex justify-content-start mb-4">
-                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-                            <label class="form-check-label" for="form1Example3"> Remember password </label>
-                        </div>
-                        <label class="form-check-label" for="form1Example3" style="padding:0%; margin-left:-60%; color: black;"><a [routerLink]="['/forgotPassword']">
-                            Forgot password </a></label>
-                        <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="login()">Login</button>
-                        <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
-                            type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-                        <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
-                            type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
-
-                        <hr class="my-4">
-
-                        <a [routerLink]="['/signup']"><button class="btn btn-primary btn-lg btn-block"> Sign
-                                Up</button></a>
-
-
-
-
-
-                        <p style="color:red">{{message}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="login" class="get-a-quote">
+<section id="login">
     <div class="container" data-aos="fade-up">
         <form action="" method="">
             <h2>Login</h2>
-            <div class="row gy-3">
-                <div class="col-md-12" id="input">
-                    <input type="email" class="form-control" name="email" [(ngModel)]="username" (click)="clear()"
-                        placeholder="Email" required>
-                </div>
-                <div class="col-md-12" id="input">
-                    <input type="password" class="form-control" name="password" [(ngModel)]="password" (click)="clear()"
-                        placeholder="Password" required>
-                </div>
-                <div class="col-md-12 text-center">
-                    <p style="color:red">{{message}}</p>
-                    <button type="submit" (click)="login()">Login</button>
-                </div>
-                <div class="col-md-12 text-center">
-                    <a [routerLink]="['/signup']">Create Account</a><br>
-                    <a [routerLink]="['/forgotPassword']">Forgot Password</a><br>
+            <div id="cont">
+                
+                <div class="row gy-3">
+                    <div class="col-md-12" id="input">
+                        <input type="email" class="form-control" name="email" [(ngModel)]="username" (click)="clear()"
+                            placeholder="Email" required>
+                    </div>
+                    <div class="col-md-12" id="input">
+                        <input type="password" class="form-control" name="password" [(ngModel)]="password"
+                            (click)="clear()" placeholder="Password" required>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <p style="color:red">{{message}}</p>
+                        <button type="submit" (click)="login()">Login</button>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <a [routerLink]="['/signup']">Create Account</a><br>
+                        <a [routerLink]="['/forgotPassword']">Forgot Password</a><br>
+                    </div>
                 </div>
             </div>
         </form>
     </div>
 </section>
-
 <app-footer></app-footer>

@@ -1,12 +1,14 @@
 #login .container form h2 {
     color: #05337e;
     text-align: center;
+    /* margin-left: -10%; */
 }
 
 #login .container form input {
-    width: auto;
-    margin-left: 40%;
+    width: 350px;
+    margin-left: 20%;
 }
+
 
 #login .container form button {
     background-color: #05337e;
@@ -20,5 +22,45 @@
 
 #login .container form a {
     margin-left: -2.6%;
-    color: black
+    color: #05337e;
+}
+
+#cont {
+    margin-left: 25%;
+    padding: 5%;
+    box-shadow: 0 0 10px black;
+    background-color: aliceblue;
+    width: 650px;
+}
+
+@media only screen and (max-width: 600px) {
+    #login .container form input {
+        width: 350px;
+        margin-left: -5%;
+    }
+
+    #login .container form button {
+        margin-left: -40%;
+    }
+
+    #login .container form a {
+        margin-left: -40%;
+        color: #05337e;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    form {
+        margin-left: -15%;
+    }
+
+    #cont {
+        margin-left: 20%;
+        background-color: white;
+        box-shadow: 0px 0px 0px white;
+    }
+
+    button {
+        margin-left: -80%;
+    }
 }
