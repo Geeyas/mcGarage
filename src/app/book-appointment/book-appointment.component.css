@@ -31,3 +31,39 @@ button:active {
     text-align: center;
     color: red;
 }
+
+#cont {
+    padding: 5%;
+    box-shadow: 0 0 10px black;
+    background-color: aliceblue;
+}
+
+@media only screen and (max-width: 600px) {
+    input, select {
+        margin-left: -40%;
+    }
+
+    #cont {
+        background-color: white;
+        box-shadow: 0px 0px 0px white;
+    }
+
+    button {
+        margin-left: -80%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    input, select {
+        margin-left: -40%;
+    }
+
+    #cont {
+        background-color: white;
+        box-shadow: 0px 0px 0px white;
+    }
+
+    button {
+        margin-left: -80%;
+    }
+}

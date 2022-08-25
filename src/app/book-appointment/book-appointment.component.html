@@ -24,63 +24,64 @@
 <div id="containerAppoint">
     <h2>Book an Appointment</h2>
     <div class="col-lg-8 fileds">
-        <form role="form" class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate(appointmentForm.value)">
-            <div class=" form-group mt-3">
-                <input type="text" class="form-control" name="name" [(ngModel)]="name" (click)="clear()" id="name"
-                    placeholder="Full name" required>
-                <div id="errMessage">{{errMsgName}}</div>
-            </div>
-            <div class=" form-group mt-3">
-                <input type="text" class="form-control" name="number" [(ngModel)]="number" (click)="clear()" id="number"
-                    placeholder="Contact Number" maxlength="10" required>
-                <div id="errMessage">{{errMsgNumber}}</div>
-            </div>
-            <div class=" form-group mt-3">
-                <input type="email" class="form-control" name="Email" [(ngModel)]="email" (click)="clear()" id="email"
-                    placeholder="Your Email" required>
-                <div id="errMessage">{{errMsgEmail}}</div>
-            </div>
-            <div class="form-group mt-3 dropdown">
-                <select id="appointment" name="appointment" [(ngModel)]="appointment" (click)="clear()"
-                    class="form-control">
-                    <option value="">Appointment for?</option>
-                    <option value="General Checking">General-Checking</option>
-                    <option value="Servicing">Servicing</option>
-                    <option value="Wrapping">Wrapping</option>
-                    <option value="Custom Addition">Custom Addition</option>
-                </select>
-                <div id="errMessage">{{errMsgApp}}</div>
-            </div>
-            <div class=" form-group mt-3">
-                <input type="date" class="form-control" name="date" [(ngModel)]="date" (click)="clear()" id="date"
-                    required>
-                <div id="errMessage">{{errMsgDate}}</div>
-            </div>
+        <form class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate(appointmentForm.value)">
+            <div id="cont">
+                <div class=" form-group mt-3">
+                    <input type="text" class="form-control" name="name" [(ngModel)]="name" (click)="clear()" id="name"
+                        placeholder="Full name" required>
+                    <div id="errMessage">{{errMsgName}}</div>
+                </div>
+                <div class=" form-group mt-3">
+                    <input type="text" class="form-control" name="number" [(ngModel)]="number" (click)="clear()"
+                        id="number" placeholder="Contact Number" maxlength="10" required>
+                    <div id="errMessage">{{errMsgNumber}}</div>
+                </div>
+                <div class=" form-group mt-3">
+                    <input type="email" class="form-control" name="Email" [(ngModel)]="email" (click)="clear()"
+                        id="email" placeholder="Your Email" required>
+                    <div id="errMessage">{{errMsgEmail}}</div>
+                </div>
+                <div class="form-group mt-3 dropdown">
+                    <select id="appointment" name="appointment" [(ngModel)]="appointment" (click)="clear()"
+                        class="form-control">
+                        <option value="">Appointment for?</option>
+                        <option value="General Checking">General-Checking</option>
+                        <option value="Servicing">Servicing</option>
+                        <option value="Wrapping">Wrapping</option>
+                        <option value="Custom Addition">Custom Addition</option>
+                    </select>
+                    <div id="errMessage">{{errMsgApp}}</div>
+                </div>
+                <div class=" form-group mt-3">
+                    <input type="date" class="form-control" name="date" [(ngModel)]="date" (click)="clear()" id="date"
+                        required>
+                    <div id="errMessage">{{errMsgDate}}</div>
+                </div>
 
-            <div class="form-group mt-3 dropdown">
-                <select id="time" name="time" [(ngModel)]="time" (click)="clear()" class="form-control">
-                    <option value="">Select Time</option>
-                    <option value="8 AM">8 AM</option>
-                    <option value="9 AM">9 AM</option>
-                    <option value="10 AM">10 AM</option>
-                    <option value="11 AM">11 AM</option>
-                    <option value="12 PM">12 PM</option>
-                    <option value="1 PM">1 PM</option>
-                    <option value="2 PM">2 PM</option>
-                    <option value="3 PM">3 PM</option>
-                    <option value="4 PM">4 PM</option>
-                </select>
-                <div id="errMessage">{{errMsgTime}}</div>
-            </div>
+                <div class="form-group mt-3 dropdown">
+                    <select id="time" name="time" [(ngModel)]="time" (click)="clear()" class="form-control">
+                        <option value="">Select Time</option>
+                        <option value="8 AM">8 AM</option>
+                        <option value="9 AM">9 AM</option>
+                        <option value="10 AM">10 AM</option>
+                        <option value="11 AM">11 AM</option>
+                        <option value="12 PM">12 PM</option>
+                        <option value="1 PM">1 PM</option>
+                        <option value="2 PM">2 PM</option>
+                        <option value="3 PM">3 PM</option>
+                        <option value="4 PM">4 PM</option>
+                    </select>
+                    <div id="errMessage">{{errMsgTime}}</div>
+                </div>
 
-            <div class="text-center">
-                <div style="color:green">{{successMsg}}</div>
-                <br>
-                <button type="submit">Book an Appointment</button>
-
+                <div class="text-center">
+                    <div style="color:green">{{successMsg}}</div>
+                    <br>
+                    <button type="submit">Book an Appointment</button>
+                </div>
             </div>
         </form>
     </div>
-</div>
-<br>
-<app-footer></app-footer>
+
+    <br>
+    <app-footer></app-footer>

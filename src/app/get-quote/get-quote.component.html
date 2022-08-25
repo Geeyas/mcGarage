@@ -29,8 +29,7 @@
             <div class="row g-0">
                 <h2 style="text-align:center; color:#05337e">Get quotation from here.</h2>
                 <div>
-                    <form action="" method="" class="php-email-form">
-
+                    <form action="" method="" class="php-email-form" style="box-shadow: 10px 5px 10px #05337e;">
                         <div class="row gy-4">
                             <div class="col-md-12">
                                 <input type="text" name="name" [(ngModel)]="name" (click)="clear()" class="form-control"
@@ -61,7 +60,8 @@
 
                             <div class="col-md-12">
                                 <textarea class="form-control" [(ngModel)]="message" (click)="clear()" name="message"
-                                    rows="6" placeholder="Description of the service you want from us" required></textarea>
+                                    rows="6" placeholder="Description of the service you want from us"
+                                    required></textarea>
                             </div>
                             <div class="col-md-12">
                                 <p style="text-align: center;color: red;">{{errMsg}}</p>
