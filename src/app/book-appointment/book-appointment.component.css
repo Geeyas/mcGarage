@@ -34,7 +34,7 @@ button:active {
 
 #cont {
     padding: 5%;
-    box-shadow: 0 0 10px black;
+    box-shadow: 10px 5px 10px black;
     background-color: aliceblue;
 }
 
