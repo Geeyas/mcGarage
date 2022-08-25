@@ -4,23 +4,23 @@ ul {
 
 .containerTerms {
    border: 1px solid white;
-   margin-left: 2%;
-   box-shadow: 5px 5px 30px rgb(119, 117, 117);
-   width: auto;
+   margin-left: 6%;
+   width: 93%;
 }
 
 #terms, p {
    text-align: center;
    color: #05337e;
+   width: auto;
 }
 
-p, li {
-   width: 90vmax;
-}
+
 
 ul li {
    color: #05337e;
-   text-align: justify;
+   margin-left: 5%;
+   text-align: center;
+   width: auto;
 }
 
 #terms {
@@ -38,5 +38,33 @@ ul li {
 
    to {
       text-shadow: 0 0 30px rgb(122, 102, 102);
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   ul li {
+      color: #05337e;
+      margin-left: -2%;
+      text-align: justify;
+   }
+
+   #terms, p {
+      text-align: justify;
+      color: #05337e;
+      width: 90%;
+   }
+}
+
+@media only screen and (max-width: 1200px) {
+   ul li {
+      color: #05337e;
+      margin-left: -2%;
+      text-align: justify;
+   }
+
+   #terms, p {
+      text-align: justify;
+      color: #05337e;
+      width: 90%;
    }
 }
