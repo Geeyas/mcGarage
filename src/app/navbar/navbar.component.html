@@ -12,16 +12,15 @@
       <ul>
         <li><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
         <li><a [routerLink]="['/about']" routerLinkActive="active">About</a></li>
-        <li class="dropdown"><a [routerLink]="['/services']" routerLinkActive="active"><span>Services</span> <i
-              class="bi bi-chevron-down dropdown-indicator"></i></a>
+        <li class="dropdown"><a [routerLink]="['/services']" routerLinkActive="active"><span>Services</span></a>
           <ul id="dropMenu">
             <li><a [routerLink]="['/services']" (click)="service()">Servicing</a></li>
             <li><a [routerLink]="['/services']" (click)="wrapService()">Wrapping</a></li>
             <li><a [routerLink]="['/services']" (click)="customAdd()">Custom Addition</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a [routerLink]="['/onlineOrder']" routerLinkActive="active"><span>Online Order</span> <i
-              class="bi bi-chevron-down dropdown-indicator"></i></a>
+        <li class="dropdown"><a [routerLink]="['/onlineOrder']" routerLinkActive="active"><span>Online Order</span> </a>
+          <!-- <i class="bi dropdown-indicator bi-chevron-down"></i> -> bootstrap css fro drop down arrow -->
           <ul id="dropMenu">
             <li><a [routerLink]="['/onlineOrder']" (click)="orderWraps()">Wraps</a></li>
             <li><a [routerLink]="['/onlineOrder']" (click)="orderParts()">Auto-Parts</a></li>
