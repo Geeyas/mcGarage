@@ -11,10 +11,14 @@
         width: auto;
     }
 
+    #dropMenu {
+        display: none;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
-   
+
 
     #navbar ul {
         padding-left: -20%;
@@ -27,6 +31,10 @@
 
     #navbar ul .get-a-quote {
         width: auto
+    }
+
+    #dropMenu {
+        display: none;
     }
 
 }
