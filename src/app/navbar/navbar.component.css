@@ -1,9 +1,32 @@
-
-@media only screen and (max-width: 768px) {
-    .navbarstyle {position: absolute;
-        right: 10px;
-        top:20px;
+@media only screen and (max-width: 1200px) {
+    #navbar ul {
+        position: absolute;
+        left: -130px;
+        top: 0px;
         width: 205px;
-        height: 383px;}
-    
+        height: 383px;
     }
+
+    #navbar ul .get-a-quote {
+        width: auto;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+   
+
+    #navbar ul {
+        padding-left: -20%;
+        position: absolute;
+        top: 0px;
+        left: -130px;
+        width: 205px;
+        height: 383px;
+    }
+
+    #navbar ul .get-a-quote {
+        width: auto
+    }
+
+}
