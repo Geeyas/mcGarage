@@ -1,10 +1,14 @@
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
+    .hamburgerIcon {
+        padding-left: 60%;
+    }
+
     #navbar ul {
         position: absolute;
-        right: 4px;
+        left: 20%;
         top: 0px;
-        width: 205px;
-        height: 383px;
+        width: 305px;
+        height: 483px;
     }
 
     #navbar ul .get-a-quote {
@@ -18,14 +22,17 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .hamburgerIcon {
+        padding-left: 25%;
+    }
 
     #navbar ul {
-        padding-left: -20%;
+        padding-left: -10%;
         position: absolute;
         top: 0px;
-        left: -56px;
+        left: -46px;
         width: 205px;
-        height: 383px;
+        height: 465px;
     }
 
     #navbar ul .get-a-quote {
