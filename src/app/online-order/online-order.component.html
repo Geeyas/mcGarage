@@ -22,15 +22,15 @@
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Wraps Section ======= -->
-    <section id="wraps" class="cards">
-        <div class="section-header">
+    <section id="wraps" class="cards" data-aos="fade-up">
+        <div class="section-header" data-aos="fade-up">
             <span>Wraps</span>
             <h2>Wraps</h2>
         </div>
         <div id="cards-collection">
-            <div class="card" *ngFor="let datas of wrap">
-                <img src={{datas.img}} class="card-img-top" alt="Blue Shades" />
-                <div class="card-body">
+            <div class="card" *ngFor="let datas of wrap" data-aos="fade-up">
+                <img src={{datas.img}} class="card-img-top" alt="Blue Shades" data-aos="fade-up" />
+                <div class="card-body" data-aos="fade-up">
                     <h4 class="card-title">{{datas.title}}</h4>
                     <h5 class="card-title">{{datas.price}}</h5>
                     <p class="card-text">{{datas.desc}}</p>
@@ -41,15 +41,15 @@
     </section><!-- End Wraps Section -->
 
     <!-- ======= Auto-Parts Section ======= -->
-    <section id="autoParts" class="">
-        <div class="section-header">
+    <section id="autoParts" class="cards" data-aos="fade-up">
+        <div class="section-header" data-aos="fade-up">
             <span>Auto-Parts</span>
             <h2>Auto-Parts</h2>
         </div>
-        <div id="cards-collection">
-            <div class="card" *ngFor="let datas of autoParts">
+        <div id="cards-collection" data-aos="fade-up">
+            <div class="card" *ngFor="let datas of autoParts" data-aos="fade-up">
                 <img src={{datas.img}} class="card-img-top" alt="Alloy" />
-                <div class="card-body">
+                <div class="card-body" data-aos="fade-up">
                     <h4 class="card-title">{{datas.title}}</h4>
                     <h5 class="card-title">{{datas.price}}</h5>
                     <p class="card-text">{{datas.desc}}</p>
