@@ -11,16 +11,15 @@ export class AppComponent implements OnInit {
   Tawk_API: any;
   Tawk_LoadStart: any;
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.Tawk_API = this.Tawk_API || {}, this.Tawk_LoadStart = new Date();
-    (function () {
+    await (function () {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
       s1.src = 'https://embed.tawk.to/62fd0fe237898912e963902c/1gam8c3ad';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);
-      console.log("Working");
     })();
   }
 }
