@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-homepage',
@@ -7,42 +9,29 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
-  feedback: any = [
-    {
-      "id": 1,
-      "img": "https://joeschmoe.io/api/v1/Ram",
-      "name": "Ram",
-      "feedback": "Nice website"
-    },
-    {
-      "id": 2,
-      "img": "https://joeschmoe.io/api/v1/Shyam",
-      "name": "Shyam",
-      "feedback": "Nice Work"
-    },
-    {
-      "id": 3,
-      "img": "https://joeschmoe.io/api/v1/Hari",
-      "name": "Hari",
-      "feedback": "Nice Job"
-    },
-    {
-      "id": 4,
-      "img": "https://joeschmoe.io/api/v1/Seeta",
-      "name": "Seeta",
-      "feedback": "Good!"
-    },
-    {
-      "id": 5,
-      "img": "https://joeschmoe.io/api/v1/Geeta",
-      "name": "Geeta",
-      "feedback": "Nice People"
-    }
-  ]
+  url = "http://localhost:3000/feedback"
+  feedback = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.fetch();
+  }
+
+  private async fetch() {
+    await this.http.get(this.url).pipe(map((responseMap) => {
+      const products = [];
+      for (const key in responseMap) {
+        if (responseMap.hasOwnProperty(key)) {
+          products.push({ ...responseMap[key], id: key })
+        }
+      }
+      this.feedback = products;
+      return products;
+    })).subscribe((response) => {
+      // console.log(response); //----> this response contains all the values getting from database
+      // this.feedback = response;
+    })
   }
 
 }

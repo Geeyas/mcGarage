@@ -21,6 +21,7 @@
     "@emailjs/browser": "^3.6.2",
     "angular-video-background": "^1.0.3",
     "emailjs": "^4.0.1",
+    "json-server": "^0.17.0",
     "mdbootstrap": "^4.20.0",
     "node": "^18.7.0",
     "nodemon": "^2.0.19",

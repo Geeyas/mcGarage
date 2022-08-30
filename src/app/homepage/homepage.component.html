@@ -147,13 +147,14 @@
         <div class="container">
             <div class="slides-1 swiper" data-aos="fade-up">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" *ngFor="let data of feedback">
+                    <div class="swiper-slide">
                         <div class="testimonial-item">
-                            <img src={{data.img}} class="testimonial-img" alt="">
-                            <h3>{{data.name}}</h3>
+                            <!-- *ngFor="let data of feedback" -->
+                            <img src="" class="testimonial-img" alt="">
+                            <h3></h3>
                             <p>
                                 <i class="bi bi-quote quote-icon-left"></i>
-                                {{data.feedback}}
+
                                 <i class="bi bi-quote quote-icon-right"></i>
                             </p>
                         </div>
