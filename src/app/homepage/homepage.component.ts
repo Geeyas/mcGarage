@@ -7,42 +7,36 @@ import { Component } from '@angular/core';
 })
 export class HomepageComponent {
 
-  carousel: any = [
+  feedback: any = [
     {
       "id": 1,
-      "img": "assets/img/pic4.jpg",
-      "alt": "Wild landscape",
-      "text": "Full Car Wrap"
+      "img": "https://joeschmoe.io/api/v1/Ram",
+      "name": "Ram",
+      "feedback": "Nice website"
     },
     {
       "id": 2,
-      "img": "assets/img/pic1.jpg",
-      "alt": "Wild landscape",
-      "text": "Full Car Wrap"
+      "img": "https://joeschmoe.io/api/v1/Shyam",
+      "name": "Shyam",
+      "feedback": "Nice Work"
     },
     {
       "id": 3,
-      "img": "assets/img/pic3.jpg",
-      "alt": "Wild landscape",
-      "text": "Full Car Wrap"
+      "img": "https://joeschmoe.io/api/v1/Hari",
+      "name": "Hari",
+      "feedback": "Nice Job"
     },
     {
       "id": 4,
-      "img": "assets/img/pic6.jpg",
-      "alt": "Wild landscape",
-      "text": "Full Car Wrap"
+      "img": "https://joeschmoe.io/api/v1/Seeta",
+      "name": "Seeta",
+      "feedback": "Good!"
     },
     {
       "id": 5,
-      "img": "assets/img/pic7.jpg",
-      "alt": "Wild landscape",
-      "text": "Full Car Wrap"
-    },
-    {
-      "id": 6,
-      "img": "assets/img/pic8.jpg",
-      "alt": "Wild landscape",
-      "text": "Full Car Wrap"
+      "img": "https://joeschmoe.io/api/v1/Geeta",
+      "name": "Geeta",
+      "feedback": "Nice People"
     }
   ]
 
