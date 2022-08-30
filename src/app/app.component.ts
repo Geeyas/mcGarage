@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   Tawk_LoadStart: any;
 
   async ngOnInit() {
-    this.Tawk_API = this.Tawk_API || {}, this.Tawk_LoadStart = new Date();
+    await (this.Tawk_API = this.Tawk_API || {}, this.Tawk_LoadStart = new Date());
     await (function () {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;

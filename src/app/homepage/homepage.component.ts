@@ -16,6 +16,7 @@ export class HomepageComponent {
 
   ngOnInit() {
     this.fetch();
+    console.log(JSON.stringify(this.url));
   }
 
   private async fetch() {
