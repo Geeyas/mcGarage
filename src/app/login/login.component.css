@@ -37,6 +37,7 @@
     width: 26.33%;
     display: block;
     margin-left: 36%;
+    margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -46,6 +47,7 @@
     }
 
     #login .container form #auth button {
+        margin-bottom: 5px;
         margin-left: 4%;
     }
 
@@ -79,6 +81,7 @@
     #login .container form #auth button {
         width: 200px;
         margin-left: 20%;
+        margin-bottom: 15px;
     }
 
     #login .container form h2 {
