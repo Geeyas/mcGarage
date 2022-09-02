@@ -29,11 +29,11 @@
         </div>
         <div id="cards-collection">
             <div class="card" *ngFor="let datas of wrap" data-aos="fade-up">
-                <img src={{datas.img}} class="card-img-top" alt="Blue Shades" data-aos="fade-up" />
-                <div class="card-body" data-aos="fade-up">
-                    <h4 class="card-title">{{datas.title}}</h4>
-                    <h5 class="card-title">{{datas.price}}</h5>
-                    <p class="card-text">{{datas.desc}}</p>
+                <img src={{datas.img}} class="card-img-top" alt="Wraps" data-aos="fade-up" />
+                <div class="card-body" data-aos="fade-up" style="height: 200px;">
+                    <h4 class="card-title" style="color: #05337e; height: 80px;">{{datas.title}}</h4>
+                    <h5 class="card-title" style="color: Black;">{{datas.price}}</h5>
+                    <!-- <p class="card-text">{{datas.desc}}</p> -->
                     <a [routerLink]="['/cart']" class="btn btn-primary">Add to Cart</a>
                 </div>
             </div>
