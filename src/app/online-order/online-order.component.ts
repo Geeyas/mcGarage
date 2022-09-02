@@ -75,69 +75,7 @@ export class OnlineOrderComponent implements OnInit {
   ];
 
   autoParts: any = [
-    {
-      "id": 1,
-      "img": "assets/img/aftermarket alloy.jpg",
-      "title": "Alloy",
-      "price": "$20",
-      "desc": "aftermarket alloy"
-    },
-    {
-      "id": 2,
-      "img": "assets/img/chromemuffler.jpg",
-      "title": "chromemuffler",
-      "price": "$20",
-      "desc": "chromemuffler"
-    },
-    {
-      "id": 3,
-      "img": "assets/img/gearstick.jpg",
-      "title": "gearstick",
-      "price": "$20",
-      "desc": "gearstick"
-    },
-    {
-      "id": 4,
-      "img": "assets/img/headlight.jpg",
-      "title": "headlight",
-      "price": "$20",
-      "desc": "headlight"
-    },
-    {
-      "id": 5,
-      "img": "assets/img/part1.jpg",
-      "title": "part1",
-      "price": "$20",
-      "desc": "part1"
-    },
-    {
-      "id": 6,
-      "img": "assets/img/rgbheadlight.jpg",
-      "title": "rgbheadlight",
-      "price": "$20",
-      "desc": "rgbheadlight"
-    },
-    {
-      "id": 7,
-      "img": "assets/img/roters.jpg",
-      "title": "roters",
-      "price": "$20",
-      "desc": "roters"
-    },
-    {
-      "id": 8,
-      "img": "assets/img/suspension.jpg",
-      "title": "suspension",
-      "price": "$20",
-      "desc": "suspension"
-    },
-    {
-      "id": 8,
-      "img": "assets/img/turbo.jpg",
-      "title": "turbo",
-      "price": "$20",
-      "desc": "turbo"
-    },
+
   ]
 
   constructor() { }
@@ -146,3 +84,68 @@ export class OnlineOrderComponent implements OnInit {
   }
 
 }
+
+//
+// {
+  // "id": 1,
+  // "img": "assets/img/aftermarket alloy.jpg",
+  // "title": "Alloy",
+  // "price": "$20",
+  // "desc": "aftermarket alloy"
+// },
+// {
+  // "id": 2,
+  // "img": "assets/img/chromemuffler.jpg",
+  // "title": "chromemuffler",
+  // "price": "$20",
+  // "desc": "chromemuffler"
+// },
+// {
+  // "id": 3,
+  // "img": "assets/img/gearstick.jpg",
+  // "title": "gearstick",
+  // "price": "$20",
+  // "desc": "gearstick"
+// },
+// {
+  // "id": 4,
+  // "img": "assets/img/headlight.jpg",
+  // "title": "headlight",
+  // "price": "$20",
+  // "desc": "headlight"
+// },
+// {
+  // "id": 5,
+  // "img": "assets/img/part1.jpg",
+  // "title": "part1",
+  // "price": "$20",
+  // "desc": "part1"
+// },
+// {
+  // "id": 6,
+  // "img": "assets/img/rgbheadlight.jpg",
+  // "title": "rgbheadlight",
+  // "price": "$20",
+  // "desc": "rgbheadlight"
+// },
+// {
+  // "id": 7,
+  // "img": "assets/img/roters.jpg",
+  // "title": "roters",
+  // "price": "$20",
+  // "desc": "roters"
+// },
+// {
+  // "id": 8,
+  // "img": "assets/img/suspension.jpg",
+  // "title": "suspension",
+  // "price": "$20",
+  // "desc": "suspension"
+// },
+// {
+  // "id": 8,
+  // "img": "assets/img/turbo.jpg",
+  // "title": "turbo",
+  // "price": "$20",
+  // "desc": "turbo"
+// },

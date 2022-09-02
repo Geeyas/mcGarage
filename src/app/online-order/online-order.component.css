@@ -41,3 +41,8 @@
   height: auto;
   width: 100%;
 }
+
+#autoParts {
+  visibility: hidden;
+  /* hiding the auto-parts section until client wants to add some parts under that section  */
+}

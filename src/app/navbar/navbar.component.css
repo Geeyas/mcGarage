@@ -1,3 +1,8 @@
+.dropdown .orderAutoPrts {
+    visibility: hidden;
+    /* hiding the dropdown menu from the online-order navigation button until cleint wants to add auto parts item on online order */
+}
+
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
     .hamburgerIcon {
         padding-left: 60%;
@@ -18,7 +23,6 @@
     #dropMenu {
         display: none;
     }
-
 }
 
 @media only screen and (max-width: 600px) {
@@ -42,5 +46,4 @@
     #dropMenu {
         display: none;
     }
-
 }
