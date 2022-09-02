@@ -37,6 +37,7 @@
     width: 26.33%;
     display: block;
     margin-left: 36%;
+    margin-bottom: 10px;
 }
 
 @media only screen and (max-width: 600px) {
