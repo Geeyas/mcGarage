@@ -37,7 +37,11 @@
     width: 26.33%;
     display: block;
     margin-left: 36%;
+<<<<<<< HEAD
     margin-bottom: 15px;
+=======
+    margin-bottom: 10px;
+>>>>>>> 1f2c7173bdb8f928b87b69a95a74465e04912858
 }
 
 @media only screen and (max-width: 600px) {
