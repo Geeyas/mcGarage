@@ -1,12 +1,16 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core'; import { map } from 'rxjs';
+import { Component } from '@angular/core';
+import { map } from 'rxjs';
 @Component({
   selector: 'app-book-appointment',
   templateUrl: './book-appointment.component.html',
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent {
-  url: string = "https://mc-garage-d0474-default-rtdb.firebaseio.com/appointmentData.json";
+  url: string = "http://localhost:3333/api";
+
+  DayDAte = new Date();
+  id: number = this.DayDAte.getTime();
 
   allData = [];
   data: string = '';
@@ -40,7 +44,7 @@ export class BookAppointmentComponent {
     this.successMsg = "";
   }
 
-  async validate(appointmentData: { name: string, number: string, email: string, appointment: string, date: string, time: string }) {
+  async validate(appointmentData: { name: string, number: string, email: string, appointment: string, date: string, time: string, id: number }) {
 
     const header = new HttpHeaders({ 'myHeader': 'Appointment Data' });
 
@@ -73,8 +77,15 @@ export class BookAppointmentComponent {
       return;
     }
     else {
-      this.data = JSON.stringify(this.allData);
-      await this.http.post(this.url, appointmentData, { headers: header }).subscribe((response) => {
+      //database table format
+      const appointmentID = this.id;
+      const fullName = this.name;
+      const contactNum = this.number;
+      const email = this.email;
+      const appointment = this.appointment;
+      const onDate = this.date;
+      var onTime = this.time;
+      await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate, onTime }, { headers: header }).subscribe((response) => {
         console.log(response);
         this.name = "";
         this.number = "";
@@ -89,7 +100,9 @@ export class BookAppointmentComponent {
         this.errMsgDate = "";
         this.successMsg = "Booked Successfully";
         this.fetchData();
-      });
+      }), (err) => {
+        this.successMsg = "Error in Booking Appointment";
+      };
       this.successMsg = "Booking...";
     }
   }

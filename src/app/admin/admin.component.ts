@@ -8,10 +8,9 @@ import { map } from 'rxjs';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+  id: number;
   errorMessage: string = '';
-  url: string = "https://mc-garage-d0474-default-rtdb.firebaseio.com/appointmentData.json";
-
+  url: string = "http://localhost:3333/api/";
   allData = [];
 
   constructor(private http: HttpClient) { }
@@ -38,6 +37,17 @@ export class AdminComponent implements OnInit {
     })).subscribe((response) => {
       // console.log(response); ----> this response contains all the values getting from database
     })
+  }
+
+  async delete() {
+    // var urlDelete = `http://localhost:3333/api/${this.id}`;
+    if (window.confirm("Are you sure to delete the data") == true) {
+      this.http.delete(this.url + this.id);
+      this.errorMessage = "Deletion Successful!"
+    } else {
+      this.errorMessage = "Deletion Cancelled!"
+    }
+
   }
 
 }

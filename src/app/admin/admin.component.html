@@ -22,6 +22,7 @@
 <div class="table" id="table">
     <table>
         <thead>
+            <th>ID</th>
             <th> Full Name </th>
             <th> Phone Number </th>
             <th> Email </th>
@@ -31,13 +32,29 @@
         </thead>
         <tbody>
             <tr *ngFor="let data of allData">
-                <td>{{data.name}}</td>
-                <td>{{data.number}}</td>
-                <td>{{data.Email}}</td>
+                <td>{{data.appointmentID}}</td>
+                <td>{{data.fullName}}</td>
+                <td>{{data.contactNum}}</td>
+                <td>{{data.email}}</td>
                 <td>{{data.appointment}}</td>
-                <td>{{data.date}}</td>
-                <td>{{data.time}}</td>
+                <td>{{data.onDate}}</td>
+                <td>{{data.onTime}}</td>
             </tr>
         </tbody>
     </table>
+</div>
+<div class="delete">
+    <div class="col-lg-8">
+        <!-- <form> -->
+        <form action="https://formsubmit.co/bf540f3b9c3176cb36295b5ca0af7ee7" method="POST" role="form"
+            class="php-email-form" id="form">
+            <div class="row">
+                <div class="col-md-8 form-group">
+                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Appointment ID to Delete"
+                        required [(ngModel)] = "id">
+                    <button type="submit" class="deleteBtn" (click) = "delete()">Delete <i class="bi bi-trash"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
