@@ -46,17 +46,26 @@ export class AdminComponent implements OnInit {
         this.errorMessage = "Deletion Successful!!"
         this.id = null;
         this.getData();
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          this.errorMessage = "";
+          window.scrollTo(0, document.body.scrollHeight);
+        }, 1500)
       }, (err) => {
         console.log(err);
         this.errorMessage = "Unsuccessful in deleting data!"
-        setTimeout((e) => {
-          this.errorMessage = ""
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          this.errorMessage = "";
+          window.scrollTo(0, document.body.scrollHeight);
         }, 1500)
       });
     } else {
       this.errorMessage = "Deletion Cancelled!"
-      setTimeout((e) => {
+      window.scrollTo(0, 0);
+      setTimeout(() => {
         this.errorMessage = "";
+        window.scrollTo(0, document.body.scrollHeight);
       }, 1500)
       this.id = null;
     }
