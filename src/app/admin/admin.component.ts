@@ -40,12 +40,25 @@ export class AdminComponent implements OnInit {
   }
 
   async delete() {
-    // var urlDelete = `http://localhost:3333/api/${this.id}`;
+    var urlDelete = `http://localhost:3333/api/${this.id}`;
     if (window.confirm("Are you sure to delete the data") == true) {
-      this.http.delete(this.url + this.id);
-      this.errorMessage = "Deletion Successful!"
+      this.http.delete(this.url + this.id).subscribe((response) => {
+        this.errorMessage = "Deletion Successful!!"
+        this.id = null;
+        this.getData();
+      }, (err) => {
+        console.log(err);
+        this.errorMessage = "Unsuccessful in deleting data!"
+        setTimeout((e) => {
+          this.errorMessage = ""
+        }, 1500)
+      });
     } else {
       this.errorMessage = "Deletion Cancelled!"
+      setTimeout((e) => {
+        this.errorMessage = "";
+      }, 1500)
+      this.id = null;
     }
 
   }
