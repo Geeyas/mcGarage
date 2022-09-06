@@ -93,7 +93,7 @@ export class BookAppointmentComponent {
         this.name = "";
         this.number = "";
         this.email = "";
-        this.appointment = ""
+        this.appointment = "";
         this.date = "";
         this.time = "";
         this.errMsgName = "";

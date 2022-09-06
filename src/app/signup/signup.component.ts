@@ -9,9 +9,12 @@ import { map } from 'rxjs';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  url: string = "http://localhost:3333/api/signup";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
+
+  allData: any[] = [];
 
   num1: number = Math.floor(Math.random() * 100);;
   num2: number = Math.floor(Math.random() * 100);;
@@ -29,8 +32,6 @@ export class SignupComponent {
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexPhone: RegExp = /^\d{10}$/;
 
-  url: string = "http://localhost:3333/api/signup";
-  allData = [];
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -60,7 +61,6 @@ export class SignupComponent {
       this.message = "Password is required";
       return;
     } else {
-
       const header = new HttpHeaders({ 'myHeader': 'Sign-Up Data' });
       const signupID = this.id;
       const fullName = this.name;

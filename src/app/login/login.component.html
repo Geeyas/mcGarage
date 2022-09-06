@@ -21,7 +21,7 @@
 
 <section id="login">
     <div class="container" data-aos="fade-up">
-        <form action="" method="">
+        <form (load)="getdata()">
             <h2>Login</h2>
             <div id="cont">
 
@@ -35,7 +35,8 @@
                             (click)="clear()" placeholder="Password" required>
                     </div>
                     <div class="col-md-12 text-center">
-                        <p style="color:red">{{message}}</p>
+                        <p style="color:red">{{messageErr}}</p>
+                        <p style="color:green">{{messageSucc}}</p>
                         <button type="submit" (click)="login()">Login</button>
                     </div>
                     <div class="col-md-12 text-center" id="link">

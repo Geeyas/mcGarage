@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,31 +7,65 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   username: string = "";
-  message: string = "";
+  messageErr: string = "";
+  messageSucc: string = "";
   password: string = "";
   url: string = "http://localhost:3333/api/signup";
 
+  allData: any = [];
+  length: number = 0;
+  index: number = null;
 
-  adminUsername: string = "admin";
+  email = [];
+  passwrd = [];
+
+  adminUsername: string = "mcgarage6060@gmail.com";
   adminPassword: string = "admin";
   constructor(private router: Router, private http: HttpClient) { }
 
+  async ngOnInit() {
+    await this.http.get(this.url).subscribe((response) => {
+      this.allData = response;
+
+      this.allData.forEach((data) => {
+        this.email.push(data.email);
+        this.passwrd.push(data.passwrd);
+      })
+    }, (err) => {
+      this.messageErr = "Error in Logging in";
+    })
+
+
+  }
+  getdata() {
+
+  }
   login() {
     if (!this.username) {
-      this.message = "Email must be entered";
+      this.messageErr = "Email must be entered";
       return;
     } else if (!this.password) {
-      this.message = "Password must be entered";
+      this.messageErr = "Password must be entered";
       return;
     } else {
-      if (this.username === this.adminUsername && this.password === this.adminPassword) {
-        this.router.navigate(['/admin']);
+      if (this.email.includes(this.username) && this.passwrd.includes(this.password)) {
+        if (this.username == this.adminUsername && this.password == this.adminPassword) {
+          this.messageSucc = "Login Successfull";
+          setTimeout(() => {
+            this.router.navigate(['/admin']);
+          }, 1500)
+        } else {
+          this.messageSucc = "Login Successfull";
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 1500)
+        }
       } else {
         this.username = "";
         this.password = "";
-        this.message = "Logged in Successfully";
+        this.messageErr = "Logged Failed";
       }
     }
   }
@@ -41,11 +75,12 @@ export class LoginComponent {
     this.http.get(this.url).subscribe((response) => {
       console.log(response);
     }, (err) => {
-      this.message = "Error in Logging in";
+      this.messageErr = "Error in Logging in";
     })
   }
 
   clear() {
-    this.message = "";
+    this.messageErr = "";
+    this.messageSucc = "";
   }
 }
