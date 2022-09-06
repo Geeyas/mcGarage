@@ -10,7 +10,7 @@ import { map } from 'rxjs';
 export class AdminComponent implements OnInit {
   id: number;
   errorMessage: string = '';
-  url: string = "http://localhost:3333/api/";
+  url: string = "http://localhost:3333/api/bookappointment";
   allData = [];
 
   constructor(private http: HttpClient) { }

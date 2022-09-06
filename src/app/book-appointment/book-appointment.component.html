@@ -24,7 +24,7 @@
 <div id="containerAppoint">
     <h2>Book an Appointment</h2>
     <div class="col-lg-8 fileds">
-        <form class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate(appointmentForm.value)">
+        <form class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate()">
             <div id="cont">
                 <div class=" form-group mt-3">
                     <input type="text" class="form-control" name="name" [(ngModel)]="name" (click)="clear()" id="name"

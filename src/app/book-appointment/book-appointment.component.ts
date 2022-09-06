@@ -8,7 +8,7 @@ import { map } from 'rxjs';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent {
-  url: string = "http://localhost:3333/api";
+  url: string = "http://localhost:3333/api/bookappointment";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
@@ -46,7 +46,7 @@ export class BookAppointmentComponent {
     this.successMsg = "";
   }
 
-  async validate(appointmentData: { name: string, number: string, email: string, appointment: string, date: string, time: string, id: number }) {
+  async validate() {
     if (!this.name) {
       this.errMsgName = "Full name required";
       return;
@@ -86,7 +86,7 @@ export class BookAppointmentComponent {
       const email = this.email;
       const appointment = this.appointment;
       const onDate = this.date;
-      var onTime = this.time;
+      const onTime = this.time;
 
       await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate, onTime }, { headers: header }).subscribe((response) => {
         console.log(response);

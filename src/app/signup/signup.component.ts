@@ -10,6 +10,9 @@ import { map } from 'rxjs';
 })
 export class SignupComponent {
 
+  DayDAte = new Date();
+  id: number = this.DayDAte.getTime();
+
   num1: number = Math.floor(Math.random() * 100);;
   num2: number = Math.floor(Math.random() * 100);;
   sum: number = this.num1 + this.num2;
@@ -21,18 +24,17 @@ export class SignupComponent {
   password: string = "";
   message: string = "";
   Successmessage: string = "";
-  answer: number = 0;
+  answer: number = null;
 
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexPhone: RegExp = /^\d{10}$/;
 
-  url: string = "https://mc-garage-d0474-default-rtdb.firebaseio.com/signUp.json";
+  url: string = "http://localhost:3333/api/signup";
   allData = [];
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  async register(signUpData: { name: string, number: string, gender: string, email: string, password: string }) {
-    const header = new HttpHeaders({ 'myHeader': 'Sign-Up Data' });
+  async register() {
     if (!this.name) {
       this.message = "Name is required";
       return;
@@ -58,9 +60,18 @@ export class SignupComponent {
       this.message = "Password is required";
       return;
     } else {
+
+      const header = new HttpHeaders({ 'myHeader': 'Sign-Up Data' });
+      const signupID = this.id;
+      const fullName = this.name;
+      const contactNum = this.number;
+      const gender = this.gender;
+      const email = this.email;
+      const passwrd = this.password;
+
       if (this.answer == this.sum) {
         this.Successmessage = "Registering New User..."
-        await this.http.post(this.url, signUpData, { headers: header }).subscribe((response) => {
+        await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, passwrd }, { headers: header }).subscribe((response) => {
           this.name = "";
           this.number = "";
           this.gender = "";

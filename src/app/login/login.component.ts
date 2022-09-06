@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,10 +11,12 @@ export class LoginComponent {
   username: string = "";
   message: string = "";
   password: string = "";
+  url: string = "http://localhost:3333/api/signup";
+
 
   adminUsername: string = "admin";
   adminPassword: string = "admin";
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   login() {
     if (!this.username) {
@@ -23,7 +26,6 @@ export class LoginComponent {
       this.message = "Password must be entered";
       return;
     } else {
-
       if (this.username === this.adminUsername && this.password === this.adminPassword) {
         this.router.navigate(['/admin']);
       } else {
@@ -32,6 +34,15 @@ export class LoginComponent {
         this.message = "Logged in Successfully";
       }
     }
+  }
+
+  // FUNCTION gets fired when the google signin button is pressed and the values are fetched from the database to the console
+  getData() {
+    this.http.get(this.url).subscribe((response) => {
+      console.log(response);
+    }, (err) => {
+      this.message = "Error in Logging in";
+    })
   }
 
   clear() {
