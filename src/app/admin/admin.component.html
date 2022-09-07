@@ -50,9 +50,10 @@
             class="php-email-form" id="form">
             <div class="row">
                 <div class="col-md-8 form-group">
-                    <input type="text" name="fullname" class="form-control" id="fullname" placeholder="Appointment ID to Delete"
-                        required [(ngModel)] = "id">
-                    <button type="submit" class="deleteBtn" (click) = "delete()">Delete <i class="bi bi-trash"></i></button>
+                    <input type="text" name="fullname" class="form-control" id="fullname"
+                        placeholder="Appointment ID to Delete" required [(ngModel)]="id">
+                    <button type="submit" class="deleteBtn" (click)="delete()">Delete <i
+                            class="bi bi-trash"></i></button>
                 </div>
             </div>
         </form>

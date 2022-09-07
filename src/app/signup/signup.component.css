@@ -14,7 +14,7 @@ input, select {
     border-color: #05337e;
     width: auto;
     border-radius: 5%;
-    box-shadow: 0 0 10px black;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
 }
 
 #captcha {
@@ -37,8 +37,8 @@ input, select {
 
 #cont {
     padding: 5%;
-    box-shadow: 10px 5px 10px black;
-    background-color: aliceblue;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
+    background-color: rgb(208, 224, 236);
 }
 
 @media only screen and (max-width: 600px) {

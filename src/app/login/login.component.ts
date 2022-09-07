@@ -52,12 +52,14 @@ export class LoginComponent implements OnInit {
     } else {
       if (this.email.includes(this.username) && this.passwrd.includes(this.password)) {
         if (this.username == this.adminUsername && this.password == this.adminPassword) {
-          this.messageSucc = "Login Successfull";
+          // admin logged in
+          this.messageSucc = "Logged in Successfully";
           setTimeout(() => {
             this.router.navigate(['/admin']);
           }, 1500)
         } else {
-          this.messageSucc = "Login Successfull";
+          //user logged in
+          this.messageSucc = "Logged Successfully";
           setTimeout(() => {
             this.router.navigate(['/home']);
           }, 1500)
@@ -65,7 +67,7 @@ export class LoginComponent implements OnInit {
       } else {
         this.username = "";
         this.password = "";
-        this.messageErr = "Logged Failed";
+        this.messageErr = "Logged in Failed";
       }
     }
   }

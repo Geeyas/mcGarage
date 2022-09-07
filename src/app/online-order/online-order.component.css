@@ -1,10 +1,11 @@
 .card {
-  box-shadow: 10px 5px 10px rgb(100, 96, 96);
+  box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
   max-width: 300px;
   margin: 20px;
   text-align: center;
   display: inline-table;
   padding: 20px;
+  background-color: rgb(208, 224, 236);
 }
 
 .price {

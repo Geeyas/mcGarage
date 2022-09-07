@@ -11,13 +11,13 @@ button {
     border: 0;
     background-color: #05337e;
     color: white;
-    box-shadow: 0 0 20px black;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
 }
 
 button:hover {
     background-color: #05337e;
     color: rgb(241, 213, 213);
-    box-shadow: 0 0 20px black;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
 }
 
 button:active {
@@ -34,8 +34,8 @@ button:active {
 
 #cont {
     padding: 5%;
-    box-shadow: 10px 5px 10px black;
-    background-color: aliceblue;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
+    background-color: rgb(208, 224, 236);
 }
 
 @media only screen and (max-width: 600px) {

@@ -40,9 +40,11 @@ export class AdminComponent implements OnInit {
   }
 
   async delete() {
-    var urlDelete = `http://localhost:3333/api/${this.id}`;
+    // var urlDelete = `http://localhost:3333/api/${this.id}`; ------> Template literal
+    var urlDelete = "http://localhost:3333/api/";
+
     if (window.confirm("Are you sure to delete the data") == true) {
-      this.http.delete(this.url + this.id).subscribe((response) => {
+      this.http.delete(urlDelete + this.id).subscribe((response) => {
         this.errorMessage = "Deletion Successful!!"
         this.id = null;
         this.getData();
