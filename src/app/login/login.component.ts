@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  isShowLogOut: boolean = false;
+  isShowLogIn: boolean = true;
+
   username: string = "";
   messageErr: string = "";
   messageSucc: string = "";
@@ -18,8 +22,18 @@ export class LoginComponent implements OnInit {
   length: number = 0;
   index: number = null;
 
+  fullName = [];
   email = [];
   passwrd = [];
+
+  loggedUser: string = "";
+  loggedEmail: string = "";
+  loggedContact: string = "";
+  userAvatar: string = "";
+
+  logged = document.querySelector('logged');
+  loggin = document.querySelector('.logging');
+
 
   adminUsername: string = "mcgarage6060@gmail.com";
   adminPassword: string = "admin";
@@ -30,6 +44,7 @@ export class LoginComponent implements OnInit {
       this.allData = response;
 
       this.allData.forEach((data) => {
+        this.fullName.push(data.fullName);
         this.email.push(data.email);
         this.passwrd.push(data.passwrd);
       })
@@ -37,11 +52,9 @@ export class LoginComponent implements OnInit {
       this.messageErr = "Error in Logging in";
     })
 
-
+    this.logged.setAttribute("style", "visibility:none;")
   }
-  getdata() {
 
-  }
   login() {
     if (!this.username) {
       this.messageErr = "Email must be entered";
@@ -51,6 +64,7 @@ export class LoginComponent implements OnInit {
       return;
     } else {
       if (this.email.includes(this.username) && this.passwrd.includes(this.password)) {
+        var index = this.email.indexOf(this.username);
         if (this.username == this.adminUsername && this.password == this.adminPassword) {
           // admin logged in
           this.messageSucc = "Logged in Successfully";
@@ -59,10 +73,15 @@ export class LoginComponent implements OnInit {
           }, 1500)
         } else {
           //user logged in
-          this.messageSucc = "Logged Successfully";
+          this.messageSucc = "Logged in Successfully";
           setTimeout(() => {
-            this.router.navigate(['/home']);
-          }, 1500)
+            this.loggedEmail = this.username;
+            this.loggedUser = this.fullName[index];
+            this.userAvatar = `https://joeschmoe.io/api/v1/${this.username}`;
+            this.isShowLogOut = true;
+            this.isShowLogIn = false;
+          }, 2000)
+
         }
       } else {
         this.username = "";
@@ -84,5 +103,17 @@ export class LoginComponent implements OnInit {
   clear() {
     this.messageErr = "";
     this.messageSucc = "";
+  }
+
+  logOut() {
+    this.isShowLogOut = false;
+    this.isShowLogIn = true;
+    this.username = "";
+    this.password = "";
+    this.messageSucc = "Logged out Successfully";
+    localStorage.clear();
+    setTimeout(() => {
+      this.messageSucc = "";
+    }, 1500);
   }
 }

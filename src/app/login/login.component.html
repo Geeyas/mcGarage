@@ -19,9 +19,9 @@
     </nav>
 </div><!-- End Breadcrumbs -->
 
-<section id="login">
+<section class="logging" id="login" *ngIf="isShowLogIn">
     <div class="container" data-aos="fade-up">
-        <form (load)="getdata()">
+        <form>
             <h2>Login</h2>
             <div id="cont">
 
@@ -72,14 +72,24 @@
         </form>
     </div>
 </section>
-<section>
-    <div class="card">
-        <img src="img_avatar.png" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
+<section id="login" class="logged" *ngIf="isShowLogOut">
+    <div class="container" data-aos="fade-up" style="margin-left: 37%;">
+        <div class="card card-cascade narrower" style="background-color: rgb(208, 224, 236);">
+
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+                <img class="card-img-top" src={{userAvatar}} alt="User avatar" style="border-radius: 100%;">
+            </div>
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade">
+                <!-- Title -->
+                <h4 class="font-weight-bold card-title" style="color: #05337e;">{{loggedUser}}</h4>
+                <h4 class="font-weight-bold card-title" style="color: #05337e;">{{loggedEmail}}</h4>
+                <!-- Button -->
+                <a class="btn btn-unique" style="background-color:#05337e; color:white;" (click)="logOut()">Log Out</a>
+            </div>
         </div>
     </div>
-
 </section>
 <app-footer></app-footer>

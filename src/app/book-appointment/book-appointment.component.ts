@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { map } from 'rxjs';
 @Component({
@@ -7,7 +7,7 @@ import { map } from 'rxjs';
   templateUrl: './book-appointment.component.html',
   styleUrls: ['./book-appointment.component.css']
 })
-export class BookAppointmentComponent {
+export class BookAppointmentComponent implements OnInit {
   url: string = "http://localhost:3333/api/bookappointment";
 
   DayDAte = new Date();
@@ -35,7 +35,15 @@ export class BookAppointmentComponent {
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexPhone: RegExp = /^\d{10}$/;
 
+  dateArr = [];
+  timeArr = [];
+
   constructor(private http: HttpClient, private router: Router) { }
+
+  ngOnInit() {
+    this.fetchData();
+  }
+
 
   clear() {
     this.errMsgName = "";
@@ -77,7 +85,10 @@ export class BookAppointmentComponent {
     }
     else {
       //database table format
-      this.fetchData();
+      for (let i = 0; i < this.allData.length; i++) {
+        this.dateArr.push(this.allData[i].onDate);
+        this.timeArr.push(this.allData[i].onTime);
+      }
 
       const header = new HttpHeaders({ 'myHeader': 'Appointment Data' });
       const appointmentID = this.id;
@@ -88,30 +99,37 @@ export class BookAppointmentComponent {
       const onDate = this.date;
       const onTime = this.time;
 
-      await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate, onTime }, { headers: header }).subscribe((response) => {
-        console.log(response);
-        this.name = "";
-        this.number = "";
-        this.email = "";
-        this.appointment = "";
-        this.date = "";
-        this.time = "";
-        this.errMsgName = "";
-        this.errMsgNumber = "";
-        this.errMsgApp = "";
-        this.errMsgEmail = "";
-        this.errMsgDate = "";
-        this.successMsg = "Booked Successfully";
-        setTimeout(() => {
-          this.router.navigate(['/home']);
-        }, 1500)
 
-      }, (err) => {
-        this.successMsg = "Error in booking appointment. Please Try again!!"
-        console.log(err);
-      })
+      for (let i = 0; i < this.dateArr.length; i++) {
+        if (this.dateArr[i] === this.date && this.timeArr[i](this.time)) {
+          this.successMsg = "Time slot not available";
+          break;
+        } else {
+          this.successMsg = "Booking...";
+          await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate, onTime }, { headers: header }).subscribe((response) => {
+            console.log(response);
+            this.name = "";
+            this.number = "";
+            this.email = "";
+            this.appointment = "";
+            this.date = "";
+            this.time = "";
+            this.errMsgName = "";
+            this.errMsgNumber = "";
+            this.errMsgApp = "";
+            this.errMsgEmail = "";
+            this.errMsgDate = "";
+            this.successMsg = "Booked Successfully";
+            setTimeout(() => {
+              this.router.navigate(['/home']);
+            }, 1500)
+          }, (err) => {
+            this.successMsg = "Error in booking appointment. Please Try again!!"
+            console.log(err);
+          })
+        }
+      }
     }
-    this.successMsg = "Booking...";
   }
 
   private async fetchData() {
@@ -123,6 +141,7 @@ export class BookAppointmentComponent {
         }
       }
       this.allData = products;
+      console.log(this.allData);
       return products;
     })).subscribe((response) => {
       // console.log(response);
