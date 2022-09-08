@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
@@ -8,13 +8,13 @@ import { map } from 'rxjs';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit {
   url: string = "http://localhost:3333/api/signup";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
 
-  allData: any[] = [];
+  allData: any = [];
 
   num1: number = Math.floor(Math.random() * 100);;
   num2: number = Math.floor(Math.random() * 100);;
@@ -32,8 +32,21 @@ export class SignupComponent {
   regexEmail: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexPhone: RegExp = /^\d{10}$/;
 
+  emailArr = [];
 
   constructor(private http: HttpClient, private router: Router) { }
+
+  async ngOnInit() {
+    await this.http.get(this.url).subscribe((response) => {
+      this.allData = response;
+
+      this.allData.forEach((data) => {
+        this.emailArr.push(data.email);
+      })
+    }, (err) => {
+      this.Successmessage = "Error in Signing up, refresh the page!";
+    })
+  }
 
   async register() {
     if (!this.name) {
@@ -70,19 +83,23 @@ export class SignupComponent {
       const passwrd = this.password;
 
       if (this.answer == this.sum) {
-        this.Successmessage = "Registering New User..."
-        await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, passwrd }, { headers: header }).subscribe((response) => {
-          this.name = "";
-          this.number = "";
-          this.gender = "";
-          this.email = "";
-          this.password = "";
-          this.Successmessage = "New User has been Registered Successfully";
-          this.answer = 0;
-          setTimeout(() => {
-            this.router.navigate(['/login']);
-          }, 1500)
-        })
+        if (this.emailArr.includes(this.email)) {
+          this.Successmessage = "Email already Exist";
+        } else {
+          this.Successmessage = "Registering New User..."
+          await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, passwrd }, { headers: header }).subscribe((response) => {
+            this.name = "";
+            this.number = "";
+            this.gender = "";
+            this.email = "";
+            this.password = "";
+            this.Successmessage = "New User has been Registered Successfully";
+            this.answer = 0;
+            setTimeout(() => {
+              this.router.navigate(['/login']);
+            }, 1500)
+          })
+        }
       } else {
         window.alert("Invalid Captcha!!!");
       }

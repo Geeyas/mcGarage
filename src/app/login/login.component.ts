@@ -51,8 +51,6 @@ export class LoginComponent implements OnInit {
     }, (err) => {
       this.messageErr = "Error in Logging in";
     })
-
-    this.logged.setAttribute("style", "visibility:none;")
   }
 
   login() {
