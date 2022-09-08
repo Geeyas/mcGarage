@@ -36,12 +36,23 @@ export class BookAppointmentComponent implements OnInit {
   regexPhone: RegExp = /^\d{10}$/;
 
   dateArr = [];
-  timeArr = [];
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  ngOnInit() {
-    this.fetchData();
+  async ngOnInit() {
+    await this.http.get(this.url).pipe(map((responseMap) => {
+      const products = [];
+      for (const key in responseMap) {
+        if (responseMap.hasOwnProperty(key)) {
+          products.push({ ...responseMap[key], id: key })
+        }
+      }
+      this.allData = products;
+      console.log(this.allData);
+      return products;
+    })).subscribe((response) => {
+      // console.log(response);
+    })
   }
 
 
@@ -84,10 +95,10 @@ export class BookAppointmentComponent implements OnInit {
       return;
     }
     else {
-      //database table format
       for (let i = 0; i < this.allData.length; i++) {
         this.dateArr.push(this.allData[i].onDate);
-        this.timeArr.push(this.allData[i].onTime);
+        console.log(this.allData[i].onDate);
+        console.log(this.dateArr);
       }
 
       const header = new HttpHeaders({ 'myHeader': 'Appointment Data' });
@@ -96,39 +107,44 @@ export class BookAppointmentComponent implements OnInit {
       const contactNum = this.number;
       const email = this.email;
       const appointment = this.appointment;
-      const onDate = this.date;
-      const onTime = this.time;
+      const onDate = 'Date:' + this.date + ' | Time: ' + this.time;
 
-
-      for (let i = 0; i < this.dateArr.length; i++) {
-        if (this.dateArr[i] === this.date && this.timeArr[i](this.time)) {
-          this.successMsg = "Time slot not available";
-          break;
-        } else {
-          this.successMsg = "Booking...";
-          await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate, onTime }, { headers: header }).subscribe((response) => {
-            console.log(response);
-            this.name = "";
-            this.number = "";
-            this.email = "";
-            this.appointment = "";
-            this.date = "";
-            this.time = "";
-            this.errMsgName = "";
-            this.errMsgNumber = "";
-            this.errMsgApp = "";
-            this.errMsgEmail = "";
-            this.errMsgDate = "";
-            this.successMsg = "Booked Successfully";
-            setTimeout(() => {
-              this.router.navigate(['/home']);
-            }, 1500)
-          }, (err) => {
-            this.successMsg = "Error in booking appointment. Please Try again!!"
-            console.log(err);
-          })
-        }
+      if (this.dateArr.includes(onDate)) {
+        this.successMsg = "Time slot booked!"
+        return;
+      } else {
+        this.successMsg = "Booking...";
+        await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate }, { headers: header }).subscribe((response) => {
+          console.log(response);
+          this.name = "";
+          this.number = "";
+          this.email = "";
+          this.appointment = "";
+          this.date = "";
+          this.time = "";
+          this.errMsgName = "";
+          this.errMsgNumber = "";
+          this.errMsgApp = "";
+          this.errMsgEmail = "";
+          this.errMsgDate = "";
+          this.successMsg = "Booked Successfully";
+          setTimeout(() => {
+            this.router.navigate(['/home']);
+          }, 1500)
+        }, (err) => {
+          this.successMsg = "Error in booking appointment. Please Try again!!"
+          console.log(err);
+        })
       }
+
+
+      // for (let i = 0; i < this.dateArr.length; i++) {
+      //   if (this.dateArr[i] === (this.date) && this.timeArr[i].exists(this.time)) {
+      //     this.successMsg = "Time slot not available";
+      //     return;
+      //   } else {
+
+      //   }
     }
   }
 
