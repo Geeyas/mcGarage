@@ -51,6 +51,13 @@ export class LoginComponent implements OnInit {
     }, (err) => {
       this.messageErr = "Error in Logging in";
     })
+    if (localStorage.getItem('user') !== null) {
+      this.loggedEmail = localStorage.getItem('email');
+      this.loggedUser = localStorage.getItem('user');
+      this.userAvatar = `https://joeschmoe.io/api/v1/${this.loggedUser}`;
+      this.isShowLogOut = true;
+      this.isShowLogIn = false;
+    }
   }
 
   login() {
@@ -75,10 +82,13 @@ export class LoginComponent implements OnInit {
           setTimeout(() => {
             this.loggedEmail = this.username;
             this.loggedUser = this.fullName[index];
-            this.userAvatar = `https://joeschmoe.io/api/v1/${this.username}`;
+            this.userAvatar = `https://joeschmoe.io/api/v1/${this.loggedUser}`;
             this.isShowLogOut = true;
             this.isShowLogIn = false;
-          }, 2000)
+            localStorage.setItem('email', this.loggedEmail);
+            localStorage.setItem('user', this.loggedUser);
+          }, 2000);
+
 
         }
       } else {
@@ -109,9 +119,10 @@ export class LoginComponent implements OnInit {
     this.username = "";
     this.password = "";
     this.messageSucc = "Logged out Successfully";
-    localStorage.clear();
+    this.messageErr = "";
     setTimeout(() => {
       this.messageSucc = "";
     }, 1500);
+    localStorage.clear();
   }
 }
