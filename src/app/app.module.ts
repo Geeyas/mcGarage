@@ -24,6 +24,7 @@ import { AddCartComponent } from './add-cart/add-cart.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from './authGuard.service';
 
 const routes: Routes = [
 
@@ -41,7 +42,7 @@ const routes: Routes = [
   { path: "bookAppointment", component: BookAppointmentComponent },
   { path: "quote", component: GetQuoteComponent },
   { path: "login", component: LoginComponent },
-  { path: "admin", component: AdminComponent },
+  { path: "admin", component: AdminComponent, canActivate: [AuthGuardService] },
   { path: "terms", component: TermsComponent },
   { path: "privacy", component: PrivacyPolicyComponent },
   { path: "bookAppointment", component: BookAppointmentComponent },
@@ -78,7 +79,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
