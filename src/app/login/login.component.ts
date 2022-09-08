@@ -94,7 +94,9 @@ export class LoginComponent implements OnInit {
       } else {
         this.username = "";
         this.password = "";
-        this.messageErr = "Logged in Failed";
+        setTimeout(() => {
+          this.messageErr = "Logged in Failed";
+        }, 1500);
       }
     }
   }
