@@ -147,6 +147,12 @@ export class OnlineOrderComponent implements OnInit {
       "title": "HoloHex Chrome",
       "price": "$15.64"
     },
+    {
+      "id": 24,
+      "img": "https://cdn.shopify.com/s/files/1/1087/5700/products/HoloHex-Chrome-Thumbnail_large.png?v=1639582271",
+      "title": "Chrome",
+      "price": "$5000.64"
+    },
 
   ];
 
