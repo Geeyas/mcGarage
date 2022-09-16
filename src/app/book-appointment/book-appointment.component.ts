@@ -8,7 +8,7 @@ import { map } from 'rxjs';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent implements OnInit {
-  url: string = "http://localhost:3333/api/bookappointment";
+  url: string = "http://54.183.160.91:3333/api/bookappointment";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
@@ -40,7 +40,14 @@ export class BookAppointmentComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   async ngOnInit() {
-    await this.http.get(this.url).pipe(map((responseMap) => {
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'Access-Control-Allow-Origin': '*',
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Methods": "*"
+    });
+    await this.http.get(this.url, { headers: header }).pipe(map((responseMap) => {
       const products = [];
       for (const key in responseMap) {
         if (responseMap.hasOwnProperty(key)) {
@@ -101,7 +108,8 @@ export class BookAppointmentComponent implements OnInit {
         console.log(this.dateArr);
       }
 
-      const header = new HttpHeaders({ 'myHeader': 'Appointment Data' });
+      const headers = new HttpHeaders();
+      const header = headers.set('Content-Type', 'application/json; charset=utf-8');
       const appointmentID = this.id;
       const fullName = this.name;
       const contactNum = this.number;

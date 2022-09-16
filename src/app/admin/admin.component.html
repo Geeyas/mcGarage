@@ -27,7 +27,7 @@
             <th> Phone Number </th>
             <th> Email </th>
             <th> Appointment </th>
-            <th> Date </th>
+            <th> Date &amp; Time </th>
         </thead>
         <tbody>
             <tr *ngFor="let data of allData">
@@ -36,7 +36,7 @@
                 <td>{{data.contactNum}}</td>
                 <td>{{data.email}}</td>
                 <td>{{data.appointment}}</td>
-                <td>{{data.onDate}}</td>
+                <td style="text-align: center;">{{data.onDate}}</td>
             </tr>
         </tbody>
     </table>
@@ -50,8 +50,9 @@
                 <div class="col-md-8 form-group">
                     <input type="text" name="fullname" class="form-control" id="fullname"
                         placeholder="Appointment ID to Delete" required [(ngModel)]="id">
-                    <button type="submit" class="deleteBtn" (click)="delete()">Delete <i
+                    <button type="submit" class="deleteBtn" (click)="delete()">Delete &nbsp;<i
                             class="bi bi-trash"></i></button>
+                    <button type="submit" class="deleteBtn" (click)="logOut()">Log Out &nbsp;&nbsp;</button>
                 </div>
             </div>
         </form>

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   messageErr: string = "";
   messageSucc: string = "";
   password: string = "";
-  url: string = "http://localhost:3333/api/signup";
+  url: string = "http://54.183.160.91:3333/api/signup";
 
   allData: any = [];
   length: number = 0;
@@ -40,16 +40,18 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) { }
 
   async ngOnInit() {
-    await this.http.get(this.url).subscribe((response) => {
+    const headers = new HttpHeaders();
+    const header = headers.append('Content-Type', 'application/json; charset=utf-8');
+    await this.http.get(this.url, { headers: header }).subscribe((response) => {
       this.allData = response;
 
       this.allData.forEach((data) => {
         this.fullName.push(data.fullName);
         this.email.push(data.email);
-        this.passwrd.push(data.passwrd);
+        this.passwrd.push(data.password);
       })
     }, (err) => {
-      this.messageErr = "Error in Logging in";
+      this.messageErr = "API not working => Not fetching any data from Database";
     })
     if (localStorage.getItem('user') !== null) {
       this.loggedEmail = localStorage.getItem('email');
@@ -86,16 +88,14 @@ export class LoginComponent implements OnInit {
             this.isShowLogIn = false;
             localStorage.setItem('email', this.loggedEmail);
             localStorage.setItem('user', this.loggedUser);
-          }, 2000);
-
-
+          }, 1000);
         }
       } else {
         this.username = "";
         this.password = "";
         setTimeout(() => {
           this.messageErr = "Logged in Failed";
-        }, 1500);
+        }, 1000);
       }
     }
   }
@@ -125,5 +125,6 @@ export class LoginComponent implements OnInit {
       this.messageSucc = "";
     }, 1500);
     localStorage.clear();
+    sessionStorage.clear();
   }
 }

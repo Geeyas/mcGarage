@@ -9,7 +9,7 @@ import { map } from 'rxjs';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  url: string = "http://localhost:3333/api/signup";
+  url: string = "http://54.183.160.91:3333/api/signup";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
@@ -37,7 +37,13 @@ export class SignupComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router) { }
 
   async ngOnInit() {
-    await this.http.get(this.url).subscribe((response) => {
+    const header = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest',
+      'MyClientCert': '',        // This is empty
+      'MyToken': ''              // This is empty
+    });
+    await this.http.get(this.url, { headers: header }).subscribe((response) => {
       this.allData = response;
 
       this.allData.forEach((data) => {
@@ -80,14 +86,14 @@ export class SignupComponent implements OnInit {
       const contactNum = this.number;
       const gender = this.gender;
       const email = this.email;
-      const passwrd = this.password;
+      const password = this.password;
 
       if (this.answer == this.sum) {
         if (this.emailArr.includes(this.email)) {
           this.Successmessage = "Email already Exist";
         } else {
           this.Successmessage = "Registering New User..."
-          await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, passwrd }, { headers: header }).subscribe((response) => {
+          await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, password }, { headers: header }).subscribe((response) => {
             this.name = "";
             this.number = "";
             this.gender = "";
