@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
   id: number;
   errorMessage: string = '';
-  url: string = "http://54.183.160.91:3333/api/bookappointment";
+  url: string = "http://54.183.160.91:3333/api/bookappointment/";
   allData = [];
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -48,7 +48,7 @@ export class AdminComponent implements OnInit {
 
   async delete() {
     // var urlDelete = `http://localhost:3333/api/${this.id}`; ------> Template literal
-    // var urlDelete = "http://54.183.160.91:3333/api/bookappointment/";
+    // var urlDelete = "http://localhost:3333/api/bookappointment/";
 
     if (window.confirm("Are you sure to delete the data") == true) {
       this.http.delete(this.url + this.id).subscribe((response) => {

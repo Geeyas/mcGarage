@@ -51,7 +51,8 @@ export class LoginComponent implements OnInit {
         this.passwrd.push(data.password);
       })
     }, (err) => {
-      this.messageErr = "API not working => Not fetching any data from Database";
+      console.log(err);
+      this.messageErr = "API not fetching any data ";
     })
     if (localStorage.getItem('user') !== null) {
       this.loggedEmail = localStorage.getItem('email');
