@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class AdminComponent implements OnInit {
   id: number;
   errorMessage: string = '';
-  url: string = "http://54.183.160.91:3333/api/bookappointment/";
+  url: string = "http://localhost:3333/api/bookappointment/";
   allData = [];
 
   constructor(private http: HttpClient, private router: Router) { }

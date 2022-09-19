@@ -28,6 +28,7 @@
             <th> Email </th>
             <th> Appointment </th>
             <th> Date &amp; Time </th>
+            <th>Time</th>
         </thead>
         <tbody>
             <tr *ngFor="let data of allData">
@@ -37,6 +38,7 @@
                 <td>{{data.email}}</td>
                 <td>{{data.appointment}}</td>
                 <td style="text-align: center;">{{data.onDate}}</td>
+                <td style="text-align: center;">{{data.onTime}}</td>
             </tr>
         </tbody>
     </table>

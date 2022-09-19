@@ -1,0 +1,74 @@
+h2 {
+    color: #05337e;
+    text-align: center;
+}
+
+form {
+    margin-left: 45%;
+}
+
+button {
+    border: 0;
+    background-color: #05337e;
+    color: white;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
+}
+
+button:hover {
+    background-color: #05337e;
+    color: rgb(241, 213, 213);
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
+}
+
+button:active {
+    border: 0;
+    background-color: #05337e;
+    color: white;
+    box-shadow: 0 0 0;
+}
+
+#errMessage {
+    text-align: center;
+    color: red;
+}
+
+#cont {
+    padding: 5%;
+    box-shadow: 10px 5px 10px rgb(100, 96, 96, 0.6);
+    background-color: rgb(208, 224, 236);
+}
+
+@media only screen and (max-width: 600px) {
+    input, select {
+        margin-left: -40%;
+    }
+
+    #errMessage {
+        margin-left: -55%;
+        margin-right: 35%;
+    }
+
+    #cont {
+        background-color: white;
+        box-shadow: 0px 0px 0px white;
+    }
+
+    button {
+        margin-left: -80%;
+    }
+}
+
+@media only screen and (max-width:601px) and (max-width: 1200px) {
+    input, select {
+        margin-left: -40%;
+    }
+
+    #cont {
+        background-color: white;
+        box-shadow: 0px 0px 0px white;
+    }
+
+    button {
+        margin-left: -80%;
+    }
+}

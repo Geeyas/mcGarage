@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   messageErr: string = "";
   messageSucc: string = "";
   password: string = "";
-  url: string = "http://54.183.160.91:3333/api/signup";
+  url: string = "http://localhost:3333/api/signup";
 
   allData: any = [];
   length: number = 0;
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   fullName = [];
   email = [];
   passwrd = [];
+  checkArr = [];
 
   loggedUser: string = "";
   loggedEmail: string = "";
@@ -44,15 +45,15 @@ export class LoginComponent implements OnInit {
     const header = headers.append('Content-Type', 'application/json; charset=utf-8');
     await this.http.get(this.url, { headers: header }).subscribe((response) => {
       this.allData = response;
-
       this.allData.forEach((data) => {
         this.fullName.push(data.fullName);
         this.email.push(data.email);
         this.passwrd.push(data.password);
+        this.checkArr.push(data.check);
       })
     }, (err) => {
       console.log(err);
-      this.messageErr = "API not fetching any data ";
+      this.messageErr = "Loggin not working refresh the page!!";
     })
     if (localStorage.getItem('user') !== null) {
       this.loggedEmail = localStorage.getItem('email');
@@ -71,7 +72,8 @@ export class LoginComponent implements OnInit {
       this.messageErr = "Password must be entered";
       return;
     } else {
-      if (this.email.includes(this.username) && this.passwrd.includes(this.password)) {
+      var checkID = this.username + this.password;
+      if (this.checkArr.includes(checkID)) {
         var index = this.email.indexOf(this.username);
         if (this.username == this.adminUsername && this.password == this.adminPassword) {
           // admin logged in

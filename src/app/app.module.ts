@@ -25,6 +25,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './authGuard.service';
+import { EditAppointmentComponent } from './edit-appointment/edit-appointment.component';
 
 const routes: Routes = [
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: "terms", component: TermsComponent },
   { path: "privacy", component: PrivacyPolicyComponent },
   { path: "bookAppointment", component: BookAppointmentComponent },
+  { path: "editAppointment", component: EditAppointmentComponent },
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "**", component: ErrorPageComponent }
 ]
@@ -71,6 +73,7 @@ const routes: Routes = [
     AddCartComponent,
     TermsComponent,
     PrivacyPolicyComponent,
+    EditAppointmentComponent,
   ],
   imports: [
     BrowserModule,

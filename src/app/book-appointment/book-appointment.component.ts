@@ -8,7 +8,7 @@ import { map } from 'rxjs';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent implements OnInit {
-  url: string = "http://54.183.160.91:3333/api/bookappointment";
+  url: string = "http://localhost:3333/api/bookappointment";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
@@ -103,9 +103,8 @@ export class BookAppointmentComponent implements OnInit {
     }
     else {
       for (let i = 0; i < this.allData.length; i++) {
-        this.dateArr.push(this.allData[i].onDate);
-        console.log(this.allData[i].onDate);
-        console.log(this.dateArr);
+        this.dateArr.push(this.allData[i].dateCheck);
+        console.log(this.allData[i].dateCheck);
       }
 
       const headers = new HttpHeaders();
@@ -115,14 +114,17 @@ export class BookAppointmentComponent implements OnInit {
       const contactNum = this.number;
       const email = this.email;
       const appointment = this.appointment;
-      const onDate = 'Date:' + this.date + ' | Time: ' + this.time;
+      const onDate = this.date;
+      const onTime = this.time;
 
-      if (this.dateArr.includes(onDate)) {
+      const dateCheck = 'Date:' + this.date + ' | Time: ' + this.time;
+
+      if (this.dateArr.includes(dateCheck)) {
         this.successMsg = "Time slot booked!"
         return;
       } else {
         this.successMsg = "Booking...";
-        await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate }, { headers: header }).subscribe((response) => {
+        await this.http.post(this.url, { appointmentID, fullName, contactNum, email, appointment, onDate, onTime, dateCheck }, { headers: header }).subscribe((response) => {
           console.log(response);
           this.name = "";
           this.number = "";

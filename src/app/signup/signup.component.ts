@@ -9,7 +9,7 @@ import { map } from 'rxjs';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  url: string = "http://54.183.160.91:3333/api/signup";
+  url: string = "http://localhost:3333/api/signup";
 
   DayDAte = new Date();
   id: number = this.DayDAte.getTime();
@@ -35,23 +35,13 @@ export class SignupComponent implements OnInit {
   emailArr = [];
 
   constructor(private http: HttpClient, private router: Router) { }
-
   async ngOnInit() {
-    const header = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'X-Requested-With': 'XMLHttpRequest',
-      'MyClientCert': '',        // This is empty
-      'MyToken': ''              // This is empty
-    });
-    await this.http.get(this.url, { headers: header }).subscribe((response) => {
-      this.allData = response;
-
-      this.allData.forEach((data) => {
-        this.emailArr.push(data.email);
-      })
+    this.http.get(this.url).subscribe((res) => {
+      this.allData = res;
+      console.log(this.allData);
     }, (err) => {
-      this.Successmessage = "Error in Signing up, refresh the page!";
-    })
+      console.log(err);
+    });
   }
 
   async register() {
@@ -80,6 +70,11 @@ export class SignupComponent implements OnInit {
       this.message = "Password is required";
       return;
     } else {
+      for (let i = 0; i < this.allData.length; i++) {
+        this.emailArr.push(this.allData[i].email);
+        console.log(this.allData[i].email);
+      }
+
       const header = new HttpHeaders({ 'myHeader': 'Sign-Up Data' });
       const signupID = this.id;
       const fullName = this.name;
@@ -87,13 +82,14 @@ export class SignupComponent implements OnInit {
       const gender = this.gender;
       const email = this.email;
       const password = this.password;
+      const check = this.email + this.password;
 
       if (this.answer == this.sum) {
         if (this.emailArr.includes(this.email)) {
           this.Successmessage = "Email already Exist";
         } else {
           this.Successmessage = "Registering New User..."
-          await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, password }, { headers: header }).subscribe((response) => {
+          await this.http.post(this.url, { signupID, fullName, contactNum, gender, email, password, check }, { headers: header }).subscribe((response) => {
             this.name = "";
             this.number = "";
             this.gender = "";

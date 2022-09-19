@@ -1,0 +1,43 @@
+<!-- ======= Breadcrumbs ======= -->
+<div class="breadcrumbs">
+    <div class="page-header d-flex align-items-center" style="background-image: url('assets/img/page-header.jpg');">
+        <div class="container position-relative">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>Edit Appointment</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="container">
+            <ol>
+                <li><a [routerLink]="['/home']" style="color:#05337e;">Home</a></li>
+                <li><a [routerLink]="['/services']" style="color:#05337e;">Services</a></li>
+                <li><a [routerLink]="['/bookAppointment']" style="color:#05337e;">Book an Appointment</a></li>
+                <li>Edit Appointment</li>
+            </ol>
+        </div>
+    </nav>
+</div><!-- End Breadcrumbs -->
+<main>
+    <div id="containerAppoint">
+        <h2>Book an Appointment</h2>
+        <div class="col-lg-8 fileds">
+            <form class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate()">
+                <div id="cont">
+                    <div class=" form-group mt-3">
+                        <input type="text" class="form-control" name="name" [(ngModel)]="name" (click)="clear()"
+                            id="name" placeholder="Full name" required>
+                    </div>
+                    <div class="text-center">
+                        <div style="color:green">{{successMsg}}</div>
+                        <div style="color:red">{{errMsg}}</div>
+                        <button [routerLink]="['/editAppointment']">Edit Appointment</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+<app-footer></app-footer>

@@ -78,14 +78,13 @@
                     <div style="color:green">{{successMsg}}</div>
                     <br>
                     <button type="submit">Book an Appointment</button>
+                    <br><br>
+                    <button [routerLink]="['/editAppointment']">Edit Appointment</button>
+
                 </div>
             </div>
-            <!-- <p *ngFor="let data of allData;">
-                <input [(ngModel)]="data.onDate">
-                {{data.onDate}},{{data.onTime}} 
-            </p> -->
         </form>
     </div>
-
-    <br>
-    <app-footer></app-footer>
+</div>
+<br>
+<app-footer></app-footer>
