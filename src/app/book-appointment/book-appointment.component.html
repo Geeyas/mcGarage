@@ -21,7 +21,7 @@
 </div><!-- End Breadcrumbs -->
 <br>
 
-<div id="containerAppoint">
+<div id="containerAppoint" *ngIf="bookForm">
     <h2>Book an Appointment</h2>
     <div class="col-lg-8 fileds">
         <form class="php-email-form" #appointmentForm="ngForm" (ngSubmit)="validate()">
@@ -87,4 +87,11 @@
     </div>
 </div>
 <br>
+<div id="containerAppoint" *ngIf="appID">
+    <h2>Appointment Booked Successfully</h2>
+    <h2>Your Appointment ID is :</h2>
+    <h3 style="color: green;text-align: center;">{{appointmentID}}</h3>
+    <h4 style="text-align:center;">AppointmentID helps you to update your appointment Details in future!</h4>
+</div>
+
 <app-footer></app-footer>

@@ -8,6 +8,11 @@ import { map } from 'rxjs';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent implements OnInit {
+
+  bookForm: boolean = true;
+  appID: boolean = false;
+
+
   url: string = "http://localhost:3333/api/bookappointment";
 
   DayDAte = new Date();
@@ -36,6 +41,7 @@ export class BookAppointmentComponent implements OnInit {
   regexPhone: RegExp = /^\d{10}$/;
 
   dateArr = [];
+  appointmentID: number = null;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -138,9 +144,9 @@ export class BookAppointmentComponent implements OnInit {
           this.errMsgEmail = "";
           this.errMsgDate = "";
           this.successMsg = "Booked Successfully";
-          setTimeout(() => {
-            this.router.navigate(['/home']);
-          }, 1500)
+          this.appointmentID = appointmentID
+          this.bookForm = false;
+          this.appID = true;
         }, (err) => {
           this.successMsg = "Error in booking appointment. Please Try again!!"
           console.log(err);

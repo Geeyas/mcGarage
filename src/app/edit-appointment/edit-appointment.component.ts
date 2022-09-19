@@ -40,17 +40,20 @@ export class EditAppointmentComponent implements OnInit {
 
   fetch() {
     this.http.get(this.urlSearch + this.nameSearch).subscribe((res) => {
-      this.isShowSearch = false;
-      this.isShowEdit = true;
-      // this.allData = res;
-      // console.log(this.allData);
-      this.appointmentID = res[0].appointmentID;
-      this.name = res[0].fullName;
-      this.number = res[0].contactNum;
-      this.email = res[0].email;
-      this.appointment = res[0].appointment;
-      this.date = res[0].onDate;
-      this.time = res[0].onTime;
+      if (!res[0].fullname) {
+        this.isShowSearch = false;
+        this.isShowEdit = true;
+        this.appointmentID = res[0].appointmentID;
+        this.name = res[0].fullName;
+        this.number = res[0].contactNum;
+        this.email = res[0].email;
+        this.appointment = res[0].appointment;
+        this.date = res[0].onDate;
+        this.time = res[0].onTime;
+      } else {
+        this.errMsg = "No such data found";
+
+      }
     }, (err) => {
       this.errMsg = "Error in editing data";
     });
@@ -87,8 +90,16 @@ export class EditAppointmentComponent implements OnInit {
     else {
       var dateCheck = 'Date:' + this.date + ' | Time: ' + this.time;
       // localhost:3333/api/bookappointment/update
-      this.http.put(this.urlUpdate, { fullName: this.name, contactNum: this.number, email: this.email, appointment: this.appointment, onDate: this.date, onTime: this.time, dateCheck: dateCheck }).subscribe(
-        (res) => { this.successMsgApp = "Update successfully" },
+      this.http.put(this.urlUpdate, { fullName: this.name, contactNum: this.number, email: this.email, appointment: this.appointment, onDate: this.date, onTime: this.time, dateCheck: dateCheck, appointmentID: this.nameSearch }).subscribe(
+        (res) => {
+          this.successMsgApp = "Update successfully"
+          setTimeout(() => {
+            this.isShowSearch = true;
+            this.isShowEdit = false;
+            this.nameSearch = "";
+          }, 1500)
+
+        },
         (err) => { this.errMsgApp = "Error In Updating data" });
     }
   }
